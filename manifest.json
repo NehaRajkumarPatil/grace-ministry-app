@@ -1,0 +1,40 @@
+{
+  "name": "Grace Ministry India",
+  "short_name": "GraceMinistry",
+  "description": "Grace Ministry India — Heal · Help · Serve. Serving Mangalore and Bangalore.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#0d1b2a",
+  "theme_color": "#0d1b2a",
+  "orientation": "portrait-primary",
+  "lang": "en-IN",
+  "icons": [
+    {
+      "src": "images/icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "images/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ],
+  "shortcuts": [
+    {
+      "name": "Prayer Request",
+      "short_name": "Prayer",
+      "url": "/?tab=prayer",
+      "icons": [{ "src": "images/icon-192.png", "sizes": "192x192" }]
+    },
+    {
+      "name": "Watch Sermons",
+      "short_name": "Sermons",
+      "url": "https://www.youtube.com/@GraceMinistryMangalore",
+      "icons": [{ "src": "images/icon-192.png", "sizes": "192x192" }]
+    }
+  ],
+  "categories": ["lifestyle", "religion"]
+}
