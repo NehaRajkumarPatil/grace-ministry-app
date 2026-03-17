@@ -9,11 +9,7 @@
 // ─────────────────────────────────────────────────────────────
 function openAdmin() {
   document.getElementById("admin-panel")?.classList.add("on");
-  if (window.currentUser) {
-    window.currentUser.getIdTokenResult()
-      .then(t => t.claims.admin ? showAdminDash() : showAdminLogin())
-      .catch(() => showAdminLogin());
-  } else { showAdminLogin(); }
+  if (window.isAdmin) { showAdminDash(); } else { showAdminLogin(); }
 }
 
 function closeAdmin() {

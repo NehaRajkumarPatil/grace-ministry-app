@@ -130,14 +130,6 @@
 
       <div class="auth-form">
 
-        <div class="tab-row">
-
-          <button class="tab-opt on" id="login-email-tab" onclick="toggleLoginMode('email')">Email</button>
-
-          <button class="tab-opt" id="login-phone-tab" onclick="toggleLoginMode('phone')">Phone</button>
-
-        </div>
-
         <div id="login-email-fields">
 
           <div class="f-label">Email address</div>
@@ -152,25 +144,7 @@
 
         </div>
 
-        <div id="login-phone-fields" style="display:none">
-
-          <div class="f-label">Mobile number</div>
-
-          <div class="phone-row">
-
-            <div class="country-code"> +91</div>
-
-            <input class="phone-field" id="phone-number-input" type="tel" placeholder="10-digit mobile number"/>
-
-          </div>
-
-          <div id="recaptcha-container" style="margin-bottom:8px"></div>
-
-          <div style="font-size:12px;color:#8899aa;margin-bottom:16px">OTP will be sent to your number</div>
-
-        </div>
-
-        <button class="btn-gold" id="login-btn" onclick="handleSmartLogin()">Sign In</button>
+        <button class="btn-gold" id="login-btn" onclick="handleLogin()">Sign In</button>
 
         <div class="divider"><div class="div-line"></div><span class="div-txt">or</span><div class="div-line"></div></div>
 

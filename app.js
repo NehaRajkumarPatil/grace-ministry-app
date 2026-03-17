@@ -192,19 +192,7 @@ function handleLogout() {
   switchTab("splash");
 }
 
-function toggleLoginMode(m) {
-  document.getElementById("login-email-fields").style.display = m === "email" ? "block" : "none";
-  document.getElementById("login-phone-fields").style.display = m === "phone" ? "block" : "none";
-  document.getElementById("login-email-tab").classList.toggle("on", m === "email");
-  document.getElementById("login-phone-tab").classList.toggle("on", m === "phone");
-}
 
-function toggleRegMode(m) {
-  document.getElementById("reg-email-fields").style.display = m === "email" ? "block" : "none";
-  document.getElementById("reg-phone-fields").style.display = m === "phone" ? "block" : "none";
-  document.getElementById("reg-email-tab").classList.toggle("on", m === "email");
-  document.getElementById("reg-phone-tab").classList.toggle("on", m === "phone");
-}
 
 // ─────────────────────────────────────────────────────────────
 // MEMBER PROFILE
@@ -367,8 +355,31 @@ function setMediaFilter(f) {
 }
 
 // ─────────────────────────────────────────────────────────────
-// AI BIBLE ASSISTANT — Full implementation
+// AI BIBLE ASSISTANT — Keyword + free Bible API
 // ─────────────────────────────────────────────────────────────
+const BIBLE_TOPICS = {
+  healing:    { verse: "james 5:14",        note: "Prayer and faith bring healing and restoration." },
+  fear:       { verse: "isaiah 41:10",      note: "God is always with you — do not be afraid." },
+  strength:   { verse: "philippians 4:13",  note: "Through Christ you can face anything." },
+  love:       { verse: "john 3:16",         note: "God's love for you is unconditional and eternal." },
+  peace:      { verse: "john 14:27",        note: "Jesus gives a peace the world cannot offer." },
+  hope:       { verse: "jeremiah 29:11",    note: "God has a good plan and a future for you." },
+  faith:      { verse: "hebrews 11:1",      note: "Faith is trusting God even when you cannot see." },
+  prayer:     { verse: "philippians 4:6",   note: "Bring everything to God in prayer with thanksgiving." },
+  worry:      { verse: "matthew 6:34",      note: "Focus on today — God holds tomorrow." },
+  forgiveness:{ verse: "1 john 1:9",        note: "God is faithful to forgive when we come to Him." },
+  salvation:  { verse: "romans 10:9",       note: "Confess and believe — salvation is a gift." },
+  grace:      { verse: "ephesians 2:8",     note: "You are saved by grace, not by your own effort." },
+  joy:        { verse: "psalm 16:11",       note: "True joy is found in God's presence." },
+  family:     { verse: "joshua 24:15",      note: "Choose to serve God together as a household." },
+  money:      { verse: "matthew 6:33",      note: "Seek God first and He will provide your needs." },
+  financial:  { verse: "philippians 4:19",  note: "God will supply all your needs according to His riches." },
+  depression: { verse: "psalm 34:18",       note: "God is close to the broken-hearted." },
+  anxiety:    { verse: "1 peter 5:7",       note: "Cast all your anxiety on Him — He cares for you." },
+  purpose:    { verse: "romans 8:28",       note: "God works all things together for good for those who love Him." },
+  trust:      { verse: "proverbs 3:5",      note: "Lean on God's understanding, not your own." }
+};
+
 function askChip(q) {
   const inp = document.getElementById("ai-q");
   if (inp) inp.value = q;
@@ -384,44 +395,50 @@ async function askBible() {
   const msgs = document.getElementById("ai-msgs");
   if (!msgs) return;
 
-  // User bubble
   const uRow = document.createElement("div");
   uRow.className = "ai-row usr-row";
   uRow.innerHTML = '<div class="usr-bub">' + q.replace(/</g,"&lt;").replace(/>/g,"&gt;") + "</div>";
   msgs.appendChild(uRow);
 
-  // Typing indicator
   const aRow = document.createElement("div");
   aRow.className = "ai-row";
   aRow.innerHTML = '<div class="ai-ava">G</div><div class="ai-bub"><div class="ai-typing"><span></span><span></span><span></span></div></div>';
   msgs.appendChild(aRow);
   msgs.scrollTop = msgs.scrollHeight;
 
+  const ql = q.toLowerCase();
+  const match = Object.keys(BIBLE_TOPICS).find(k => ql.includes(k));
+
   try {
-    const r = await fetch("https://api.anthropic.com/v1/messages", {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({
-        model: "claude-sonnet-4-20250514",
-        max_tokens: 1000,
-        system: `You are a warm, Spirit-filled Bible assistant for Grace Ministry India, a Christian healing ministry serving Mangalore and Bangalore, led by Bro. Andrew Richard.
-
-When users ask Bible questions:
-1. Give a clear, warm explanation (2-3 sentences)
-2. Quote 1-2 relevant Bible verses with references
-3. Share a brief encouraging message
-4. Keep total response under 200 words
-
-Format responses clearly with the explanation, then "📖 Key Verse:" followed by the verse, then "✨ Encouragement:" followed by the encouragement.`,
-        messages: [{ role: "user", content: q }]
-      })
-    });
-
-    const d = await r.json();
-    const text = d.content?.[0]?.text || "I'm unable to respond right now. Please try again.";
-    aRow.querySelector(".ai-bub").textContent = text;
-  } catch (err) {
-    aRow.querySelector(".ai-bub").textContent = "Bible Assistant is coming soon. Stay tuned! 🙏";
+    if (match) {
+      const topic = BIBLE_TOPICS[match];
+      const res = await fetch("https://bible-api.com/" + encodeURIComponent(topic.verse) + "?translation=kjv");
+      const d   = await res.json();
+      const verseText = d.text ? d.text.trim().replace(/\n/g, " ") : "";
+      const ref       = d.reference || topic.verse;
+      aRow.querySelector(".ai-bub").innerHTML =
+        "\u201c" + verseText + "\u201d\n\u2014 " + ref +
+        "\n\n\u2728 " + topic.note;
+    } else {
+      // Try to look up the verse directly if it looks like a reference
+      const versePattern = /([1-3]?\s?[a-z]+)\s*(\d+):(\d+)/i;
+      if (versePattern.test(q)) {
+        const res = await fetch("https://bible-api.com/" + encodeURIComponent(q) + "?translation=kjv");
+        const d   = await res.json();
+        if (d.text) {
+          aRow.querySelector(".ai-bub").innerHTML =
+            "\u201c" + d.text.trim().replace(/\n/g, " ") + "\u201d\n\u2014 " + d.reference;
+        } else {
+          aRow.querySelector(".ai-bub").textContent =
+            "I couldn't find that verse. Try topics like: healing, fear, hope, peace, faith, love, prayer, strength. 🙏";
+        }
+      } else {
+        aRow.querySelector(".ai-bub").textContent =
+          "Try asking about: healing, fear, hope, peace, faith, love, prayer, strength, forgiveness, joy, family, or type a verse like \"John 3:16\". 🙏";
+      }
+    }
+  } catch {
+    aRow.querySelector(".ai-bub").textContent = "Unable to fetch verse. Please check your connection. 🙏";
   }
   msgs.scrollTop = msgs.scrollHeight;
 }
@@ -437,143 +454,7 @@ if ("serviceWorker" in navigator) {
   });
 }
 
-// ─────────────────────────────────────────────────────────────
-// SMART LOGIN — routes email vs phone based on active tab
-// ─────────────────────────────────────────────────────────────
-function handleSmartLogin() {
-  const phoneTab = document.getElementById("login-phone-tab");
-  if (phoneTab && phoneTab.classList.contains("on")) {
-    sendPhoneOTP();
-  } else {
-    handleLogin();
-  }
-}
 
-// ─────────────────────────────────────────────────────────────
-// PHONE OTP — Firebase Phone Authentication
-// ─────────────────────────────────────────────────────────────
-function otpMove(el, nextId) {
-  el.value = el.value.slice(-1);
-  if (el.value && nextId) document.getElementById(nextId)?.focus();
-  if (getOTPCode().length === 6) verifyOTP();
-}
-
-function getOTPCode() {
-  return ["otp1","otp2","otp3","otp4","otp5","otp6"]
-    .map(id => document.getElementById(id)?.value || "").join("");
-}
-
-function clearOTPBoxes() {
-  ["otp1","otp2","otp3","otp4","otp5","otp6"].forEach(id => {
-    const el = document.getElementById(id);
-    if (el) el.value = "";
-  });
-  document.getElementById("otp1")?.focus();
-}
-
-async function sendPhoneOTP() {
-  const raw = document.getElementById("phone-number-input")?.value?.trim();
-
-  if (!raw || raw.replace(/\D/g,"").length < 10) {
-    alert("Please enter a valid 10-digit mobile number.");
-    return;
-  }
-
-  const phoneNumber = "+91" + raw.replace(/\D/g,"");
-  const btn = document.getElementById("login-btn");
-
-  if (btn) {
-    btn.textContent = "Sending OTP...";
-    btn.disabled = true;
-  }
-
-  try {
-    if (!window.fbAuth) throw new Error("Firebase not configured yet.");
-
-    // clear any previous recaptcha instance and DOM
-    if (window.recaptchaVerifier) {
-      try { window.recaptchaVerifier.clear(); } catch (_) {}
-      window.recaptchaVerifier = null;
-    }
-    const container = document.getElementById("recaptcha-container");
-    if (container) container.innerHTML = "";
-
-    window.recaptchaVerifier = new firebase.auth.RecaptchaVerifier(
-      "recaptcha-container",
-      { size: "invisible" }
-    );
-
-    await window.recaptchaVerifier.render();
-
-    const result = await window.fbAuth.signInWithPhoneNumber(
-      phoneNumber,
-      window.recaptchaVerifier
-    );
-
-    window.otpConfirmationResult = result;
-
-    const sentTo = document.getElementById("otp-sent-to");
-    if (sentTo) {
-      sentTo.textContent = "OTP sent to +91 " + raw.replace(/\D/g,"");
-    }
-
-    clearOTPBoxes();
-    otpSec = 45;
-    switchTab("otp");
-    runOtpTimer();
-
-  } catch (err) {
-    console.error(err);
-    alert("Failed to send OTP: " + err.message);
-    window.recaptchaVerifier = null;
-  } finally {
-    if (btn) {
-      btn.textContent = "Sign In";
-      btn.disabled = false;
-    }
-  }
-}
-
-async function verifyOTP() {
-  const code = getOTPCode();
-  const errEl = document.getElementById("otp-error");
-  if (code.length < 6) {
-    if (errEl) { errEl.textContent = "Please enter all 6 digits."; errEl.style.display = "block"; }
-    return;
-  }
-  const btn = document.getElementById("otp-verify-btn");
-  if (btn) { btn.textContent = "Verifying..."; btn.disabled = true; }
-  if (errEl) errEl.style.display = "none";
-  try {
-    if (!window.otpConfirmationResult) throw new Error("Session expired. Please request a new OTP.");
-    const cred = await window.otpConfirmationResult.confirm(code);
-    if (cred.user) {
-      await saveMemberProfile(cred.user.uid, {
-        name: cred.user.displayName || "",
-        phone: cred.user.phoneNumber || "",
-        email: cred.user.email || "",
-        city: "Mangalore", role: "user",
-        createdAt: new Date().toISOString()
-      });
-    }
-    switchTab("home");
-  } catch (err) {
-    if (errEl) {
-      errEl.textContent = (err.message.includes("invalid") || err.message.includes("code"))
-        ? "Wrong OTP. Please try again." : err.message;
-      errEl.style.display = "block";
-    }
-  } finally {
-    if (btn) { btn.textContent = "Verify & Continue"; btn.disabled = false; }
-  }
-}
-
-async function resendOTP() {
-  if (window.recaptchaVerifier) { window.recaptchaVerifier.clear(); window.recaptchaVerifier = null; }
-  window.otpConfirmationResult = null;
-  switchTab("login");
-  toggleLoginMode("phone");
-}
 
 // ─────────────────────────────────────────────────────────────
 // CITY PREFERENCE TOGGLE
