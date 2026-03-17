@@ -155,22 +155,32 @@ async function handleLogin() {
 }
 
 async function handleRegister() {
-  const name  = document.getElementById("reg-name")?.value?.trim() || "";
-  const email = document.getElementById("reg-email")?.value?.trim();
-  const pw    = document.getElementById("reg-pw")?.value;
-  const phone = document.getElementById("reg-phone")?.value?.trim() || "";
-  const city  = document.getElementById("reg-city")?.value || "Mangalore";
-  if (!email || !pw) { alert("Email and password are required."); return; }
-  if (window.fbAuth) {
-    try {
-      const cred = await window.fbAuth.createUserWithEmailAndPassword(email, pw);
-      await cred.user.updateProfile({ displayName: name });
-      await saveMemberProfile(cred.user.uid, { name, email, phone, city, createdAt: new Date().toISOString() });
-      switchTab("home");
-    } catch (err) { alert("Register error: " + err.message); }
-    return;
+  const email    = document.getElementById("reg-email")?.value?.trim();
+  const password = document.getElementById("reg-pw")?.value?.trim();
+  const phone    = document.getElementById("reg-phone")?.value?.trim();
+
+  if (!email || !password) { alert("Please fill all required fields."); return; }
+
+  try {
+    const userCredential = await firebase.auth().createUserWithEmailAndPassword(email, password);
+    const user = userCredential.user;
+
+    await window.db.collection("users").doc(user.uid).set({
+      email,
+      phone: phone || "",
+      createdAt: new Date().toISOString()
+    });
+
+    alert("Registration successful!");
+    switchTab("login");
+  } catch (err) {
+    console.error(err);
+    const msg =
+      err.code === "auth/email-already-in-use" ? "Email already registered." :
+      err.code === "auth/weak-password"        ? "Password should be at least 6 characters." :
+      "Registration failed";
+    alert(msg);
   }
-  switchTab("home");
 }
 
 async function handleGoogleLogin() {
