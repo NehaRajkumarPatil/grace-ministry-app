@@ -138,7 +138,17 @@ async function handleLogin() {
     try {
       await window.fbAuth.signInWithEmailAndPassword(email, pw);
       switchTab("home");
-    } catch (err) { alert("Login error: " + err.message); }
+    } catch (err) {
+      const c = err.code;
+      const msg =
+        c === "auth/user-not-found"     ? "No account found. Please register first." :
+        c === "auth/wrong-password"     ? "Incorrect password. Please try again." :
+        c === "auth/invalid-email"      ? "Invalid email format." :
+        c === "auth/invalid-credential" ? "Email or password is incorrect." :
+        c === "auth/too-many-requests"  ? "Too many attempts. Please try again later." :
+        "Login failed. Please try again.";
+      alert(msg);
+    }
     return;
   }
   switchTab("home");
@@ -148,13 +158,14 @@ async function handleRegister() {
   const name  = document.getElementById("reg-name")?.value?.trim() || "";
   const email = document.getElementById("reg-email")?.value?.trim();
   const pw    = document.getElementById("reg-pw")?.value;
+  const phone = document.getElementById("reg-phone")?.value?.trim() || "";
   const city  = document.getElementById("reg-city")?.value || "Mangalore";
   if (!email || !pw) { alert("Email and password are required."); return; }
   if (window.fbAuth) {
     try {
       const cred = await window.fbAuth.createUserWithEmailAndPassword(email, pw);
       await cred.user.updateProfile({ displayName: name });
-      await saveMemberProfile(cred.user.uid, { name, email, city, createdAt: new Date().toISOString() });
+      await saveMemberProfile(cred.user.uid, { name, email, phone, city, createdAt: new Date().toISOString() });
       switchTab("home");
     } catch (err) { alert("Register error: " + err.message); }
     return;
@@ -410,7 +421,7 @@ Format responses clearly with the explanation, then "📖 Key Verse:" followed b
     const text = d.content?.[0]?.text || "I'm unable to respond right now. Please try again.";
     aRow.querySelector(".ai-bub").textContent = text;
   } catch (err) {
-    aRow.querySelector(".ai-bub").textContent = "Unable to connect. Please check your internet connection and try again. 🙏";
+    aRow.querySelector(".ai-bub").textContent = "Bible Assistant is coming soon. Stay tuned! 🙏";
   }
   msgs.scrollTop = msgs.scrollHeight;
 }
@@ -479,11 +490,14 @@ async function sendPhoneOTP() {
   try {
     if (!window.fbAuth) throw new Error("Firebase not configured yet.");
 
-    // 🔥 CLEAR OLD RECAPTCHA
+    // clear any previous recaptcha instance and DOM
+    if (window.recaptchaVerifier) {
+      try { window.recaptchaVerifier.clear(); } catch (_) {}
+      window.recaptchaVerifier = null;
+    }
     const container = document.getElementById("recaptcha-container");
     if (container) container.innerHTML = "";
 
-    // 🔥 CREATE NEW ONE
     window.recaptchaVerifier = new firebase.auth.RecaptchaVerifier(
       "recaptcha-container",
       { size: "invisible" }

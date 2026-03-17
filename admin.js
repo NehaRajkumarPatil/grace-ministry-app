@@ -45,8 +45,8 @@ async function adminSignIn() {
   try {
     if (!window.fbAuth) { showAdminErr("Firebase not configured."); return; }
     const cred  = await window.fbAuth.signInWithEmailAndPassword(email, pw);
-    const token = await cred.user.getIdTokenResult();
-    if (!token.claims.admin) {
+    const adminDoc = await window.db.collection("admins").doc(cred.user.uid).get();
+    if (!adminDoc.exists) {
       await window.fbAuth.signOut();
       showAdminErr("You do not have admin access. Contact the church administrator.");
       return;

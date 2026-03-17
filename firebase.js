@@ -21,8 +21,8 @@ function initFirebase() {
       window.isAdmin     = false;
       if (user) {
         try {
-          const token = await user.getIdTokenResult();
-          window.isAdmin = !!token.claims.admin;
+          const adminDoc = await window.db.collection("admins").doc(user.uid).get();
+          window.isAdmin = adminDoc.exists;
         } catch(e) {}
         if (document.getElementById("admin-panel")?.classList.contains("on")) renderAdminDash();
       }
