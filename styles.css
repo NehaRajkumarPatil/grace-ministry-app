@@ -205,11 +205,13 @@ html, body { width:100%; height:100%; overflow:hidden; background:var(--bg-deep)
 /* ── TABBAR ──────────────────────────────────────────────── */
 .tabbar { display:flex; background:var(--bg-mid); border-top:0.5px solid var(--bg-card); padding:8px 0 14px; overflow-x:auto; scrollbar-width:none; }
 .tabbar::-webkit-scrollbar { display:none; }
-.tab { flex:1; min-width:52px; display:flex; flex-direction:column; align-items:center; gap:3px; cursor:pointer; }
-.tab-ico { width:20px; height:20px; fill:none; stroke:var(--stroke); stroke-width:1.5; stroke-linecap:round; stroke-linejoin:round; }
-.tab.on .tab-ico { stroke:var(--tab-on); }
-.tab-lbl { font-size:9px; color:var(--text-secondary); white-space:nowrap; }
-.tab.on .tab-lbl { color:var(--tab-on); }
+.tab { flex:1; min-width:52px; display:flex; flex-direction:column; align-items:center; justify-content:center; gap:3px; cursor:pointer; opacity:1; font-size:10px; }
+.tab svg, .tab i { color:#8899aa; }
+.tab-ico { width:20px; height:20px; fill:none; stroke:#8899aa; stroke-width:1.5; stroke-linecap:round; stroke-linejoin:round; }
+.tab.on .tab-ico { stroke:#c9b97a; }
+.tab.on svg, .tab.on i { color:#c9b97a; }
+.tab-lbl { font-size:10px; color:#8899aa; white-space:nowrap; margin-top:2px; }
+.tab.on .tab-lbl { color:#c9b97a; font-weight:500; }
 
 /* ── STICKY BOTTOM BARS ──────────────────────────────────── */
 .screen-bottom { padding:8px 12px 10px; background:var(--bg-deep); border-top:0.5px solid var(--bg-card); flex-shrink:0; }
@@ -310,18 +312,11 @@ body.light .splash-img { box-shadow:0 8px 32px #00000022; }
 .media-filter::-webkit-scrollbar { display:none; }
 .media-pill { padding:6px 14px; border-radius:16px; font-size:12px; cursor:pointer; white-space:nowrap; border:0.5px solid var(--border); background:var(--bg-card); color:var(--text-muted); }
 .media-pill.on { background:var(--gold); color:#0d1b2a; font-weight:600; border-color:var(--gold); }
-.media-grid { padding:12px 16px; display:flex; flex-direction:column; gap:12px; }
-.media-card { background:var(--bg-card); border-radius:14px; overflow:hidden; border:0.5px solid var(--border); cursor:pointer; }
-.media-thumb { width:100%; height:160px; background:var(--bg-mid); display:flex; align-items:center; justify-content:center; position:relative; overflow:hidden; }
-.media-thumb img { width:100%; height:100%; object-fit:cover; }
-.media-play-btn { position:absolute; width:48px; height:48px; border-radius:50%; background:rgba(0,0,0,0.7); display:flex; align-items:center; justify-content:center; border:2px solid var(--gold); }
-.media-type-badge { position:absolute; top:8px; right:8px; padding:3px 8px; border-radius:8px; font-size:10px; font-weight:700; letter-spacing:0.5px; }
-.media-type-sermon { background:#ff0000; color:#fff; }
-.media-type-reel { background:#e1306c; color:#fff; }
-.media-type-video { background:#5f259f; color:#fff; }
-.media-info { padding:12px 14px; }
-.media-title { font-size:14px; font-weight:500; color:var(--text-primary); margin-bottom:4px; }
-.media-meta  { font-size:11px; color:var(--text-muted); }
+.media-grid { padding:12px 16px; display:flex; flex-direction:column; gap:0; }
+.media-simple { background:var(--bg-card); padding:14px 16px; border-radius:12px; margin-bottom:10px; border:0.5px solid var(--border); transition:border-color 0.2s; }
+.media-simple:active { border-color:var(--gold); }
+.media-title { font-size:14px; font-weight:600; color:var(--text-primary); }
+.media-meta  { font-size:12px; color:#8899aa; margin-top:4px; }
 
 /* ── COMMUNITY FEED ──────────────────────────────────────── */
 .post-card { background:var(--bg-card); border-radius:14px; margin:0 16px 12px; border:0.5px solid var(--border); overflow:hidden; }
@@ -353,7 +348,7 @@ body.light .splash-img { box-shadow:0 8px 32px #00000022; }
 
 /* ── VOLUNTEER ───────────────────────────────────────────── */
 .volunteer-team { background:var(--bg-card); border-radius:14px; margin:0 16px 10px; padding:16px; border:0.5px solid var(--border); display:flex; align-items:center; gap:14px; }
-.volunteer-icon { width:44px; height:44px; border-radius:12px; display:flex; align-items:center; justify-content:center; font-size:22px; flex-shrink:0; }
+.volunteer-icon { display:none; }
 .volunteer-info { flex:1; }
 .volunteer-name { font-size:14px; font-weight:600; color:var(--text-primary); }
 .volunteer-desc { font-size:12px; color:var(--text-muted); margin-top:2px; }

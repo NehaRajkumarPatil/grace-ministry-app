@@ -299,20 +299,17 @@ function renderMediaCards(items) {
   if (!container) return;
   if (!items.length) { container.innerHTML = '<div class="devot-empty">No media yet. Check back soon!</div>'; return; }
   container.innerHTML = items.map(m => {
-    const typeClass = "media-type-" + (m.type || "video");
-    const typeLabel = (m.type || "VIDEO").toUpperCase();
-    const thumb = m.thumbnail
-      ? `<img src="${m.thumbnail}" alt="${m.title}" onerror="this.style.display='none'">`
-      : `<div class="media-play-btn"><svg width="20" height="20" viewBox="0 0 24 24" fill="var(--gold)"><polygon points="5 3 19 12 5 21 5 3"/></svg></div>`;
-    return `<div class="media-card" onclick="window.open('${m.videoURL||"#"}','_blank')">
-      <div class="media-thumb">${thumb}
-        <div class="media-play-btn"><svg width="20" height="20" viewBox="0 0 24 24" fill="var(--gold)"><polygon points="5 3 19 12 5 21 5 3"/></svg></div>
-        <div class="media-type-badge ${typeClass}">${typeLabel}</div>
+    const url = m.videoURL || "#";
+    const typeLabel = (m.type || "video").toUpperCase();
+    const date = (m.createdAt || "").slice(0, 10);
+    const by   = m.uploadedBy || "Grace Ministry";
+    return `<div class="media-simple" onclick="window.open('${url}','_blank')" style="cursor:pointer">
+      <div style="display:flex;justify-content:space-between;align-items:flex-start;gap:8px">
+        <div class="media-title">${m.title || "Media"}</div>
+        <span style="font-size:10px;font-weight:700;color:#c9b97a;background:#c9b97a22;border:0.5px solid #c9b97a44;border-radius:6px;padding:2px 7px;white-space:nowrap;flex-shrink:0">${typeLabel}</span>
       </div>
-      <div class="media-info">
-        <div class="media-title">${m.title||"Media"}</div>
-        <div class="media-meta">${m.uploadedBy||"Grace Ministry"} · ${(m.createdAt||"").slice(0,10)}</div>
-      </div></div>`;
+      <div class="media-meta">${by} · ${date}</div>
+    </div>`;
   }).join("");
 }
 
