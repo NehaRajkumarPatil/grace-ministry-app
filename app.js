@@ -157,19 +157,22 @@ async function handleLogin() {
 async function handleRegister() {
   const email    = document.getElementById("reg-email")?.value?.trim();
   const password = document.getElementById("reg-pw")?.value?.trim();
+  const name     = document.getElementById("reg-name")?.value?.trim();
   const phone    = document.getElementById("reg-phone")?.value?.trim();
 
   if (!email || !password) { alert("Please fill all required fields."); return; }
 
   try {
-    const userCredential = await firebase.auth().createUserWithEmailAndPassword(email, password);
-    const user = userCredential.user;
+    const cred = await firebase.auth().createUserWithEmailAndPassword(email, password);
+    const user = cred.user;
 
     await window.db.collection("users").doc(user.uid).set({
-      email,
+      name: name || "",
+      email: email,
       phone: phone || "",
+      role: "user",
       createdAt: new Date().toISOString()
-    });
+    }, { merge: true });
 
     alert("Registration successful!");
     switchTab("login");

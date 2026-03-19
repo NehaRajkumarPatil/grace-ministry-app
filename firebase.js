@@ -88,8 +88,17 @@ async function loadVerseFromFirestore() {
       const v = doc.data();
       const vEl = document.getElementById("daily-verse-text");
       const rEl = document.getElementById("daily-verse-ref");
+      const dateEl = document.getElementById("verse-date-tag");
+      
       if (vEl && v.text) vEl.textContent = "\u201c" + v.text + "\u201d";
       if (rEl && v.ref)  rEl.textContent = "\u2014 " + v.ref;
+      
+      // Update date tag if date field exists
+      if (dateEl && v.date) {
+        const dateObj = new Date(v.date);
+        const MO = ["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"];
+        dateEl.textContent = "Daily Verse \u00b7 " + MO[dateObj.getMonth()] + " " + dateObj.getDate();
+      }
     } else { loadDailyVerseFromAPI(); }
   } catch { loadDailyVerseFromAPI(); }
 }
@@ -217,11 +226,24 @@ async function loadEventsFromFirestore() {
     container.innerHTML = "";
     snap.forEach(doc => {
       const ev = doc.data();
+      
+      // Handle date conversion if only "date" field exists (YYYY-MM-DD format)
+      let day = ev.day;
+      let month = ev.month;
+      
+      if (!day || !month) {
+        if (ev.date) {
+          const dateObj = new Date(ev.date);
+          day = dateObj.getDate();
+          month = ["JAN","FEB","MAR","APR","MAY","JUN","JUL","AUG","SEP","OCT","NOV","DEC"][dateObj.getMonth()];
+        }
+      }
+      
       const row = document.createElement("div");
       row.className = "event-row";
       row.innerHTML = `<div style="width:38px;text-align:center">
-        <div class="e-day">${ev.day||""}</div>
-        <div class="e-mon">${ev.month||""}</div></div>
+        <div class="e-day">${day||""}</div>
+        <div class="e-mon">${month||""}</div></div>
         <div style="flex:1"><div class="e-title">${ev.title||""}</div>
         <div class="e-time">${ev.time||""} · ${ev.location||""}</div></div>
         <a href="https://wa.me/919880093988?text=Register%3A%20${encodeURIComponent(ev.title||'')}"
