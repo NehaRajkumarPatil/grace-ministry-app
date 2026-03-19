@@ -297,18 +297,28 @@ async function loadMediaFeed(filter) {
 function renderMediaCards(items) {
   const container = document.getElementById("media-grid");
   if (!container) return;
-  if (!items.length) { container.innerHTML = '<div class="devot-empty">No media yet. Check back soon!</div>'; return; }
+  if (!items.length) { container.innerHTML = '<div class="devot-empty">No media yet. Check back soon! 🎬</div>'; return; }
   container.innerHTML = items.map(m => {
-    const url = m.videoURL || "#";
-    const typeLabel = (m.type || "video").toUpperCase();
+    const url  = m.videoURL || "#";
+    const type = (m.type || "video").toLowerCase();
     const date = (m.createdAt || "").slice(0, 10);
     const by   = m.uploadedBy || "Grace Ministry";
-    return `<div class="media-simple" onclick="window.open('${url}','_blank')" style="cursor:pointer">
-      <div style="display:flex;justify-content:space-between;align-items:flex-start;gap:8px">
-        <div class="media-title">${m.title || "Media"}</div>
-        <span style="font-size:10px;font-weight:700;color:#c9b97a;background:#c9b97a22;border:0.5px solid #c9b97a44;border-radius:6px;padding:2px 7px;white-space:nowrap;flex-shrink:0">${typeLabel}</span>
+    const isReel = type === "reel";
+    const badgeColor = isReel ? "#e1306c" : "#ff0000";
+    const badgeBg    = isReel ? "#e1306c22" : "#ff000022";
+    const icon = isReel
+      ? `<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#c9b97a" stroke-width="1.5"><rect x="2" y="2" width="20" height="20" rx="4"/><path d="M8 2v20M16 2v20M2 12h20M2 7h6M16 7h6M2 17h6M16 17h6"/></svg>`
+      : `<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#c9b97a" stroke-width="1.5"><polygon points="5 3 19 12 5 21 5 3"/></svg>`;
+    return `<div class="media-card-new" onclick="window.open('${url}','_blank')">
+      <div class="media-card-thumb">
+        <div class="media-card-icon">${icon}</div>
+        <div class="media-card-play"><svg width="18" height="18" viewBox="0 0 24 24" fill="#0d1b2a"><polygon points="5 3 19 12 5 21 5 3"/></svg></div>
+        <span class="media-card-badge" style="background:${badgeBg};color:${badgeColor};border-color:${badgeColor}44">${type.toUpperCase()}</span>
       </div>
-      <div class="media-meta">${by} · ${date}</div>
+      <div class="media-card-body">
+        <div class="media-card-title">${m.title || "Media"}</div>
+        <div class="media-card-meta">${by} · ${date}</div>
+      </div>
     </div>`;
   }).join("");
 }
