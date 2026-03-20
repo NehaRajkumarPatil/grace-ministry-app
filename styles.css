@@ -29,7 +29,7 @@ body.light {
 /* ── BASE ────────────────────────────────────────────────── */
 html, body { width:100%; height:100%; overflow:hidden; background:var(--bg-deep); }
 .frame  { background:var(--bg-deep); display:flex; justify-content:center; align-items:stretch; width:100%; height:100vh; }
-.phone  { width:100%; max-width:480px; background:var(--bg-deep); display:flex; flex-direction:column; font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif; height:100vh; overflow:hidden; }
+.phone  { width:100%; max-width:480px; background:var(--bg-deep); display:flex; flex-direction:column; font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif; height:100vh; overflow:visible; }
 .sb     { display:flex; justify-content:space-between; align-items:center; padding:10px 22px 4px; color:var(--text-secondary); font-size:11px; background:var(--bg-mid); }
 
 /* ── SCREENS ─────────────────────────────────────────────── */
@@ -206,27 +206,30 @@ html, body { width:100%; height:100%; overflow:hidden; background:var(--bg-deep)
 .tabbar {
   display: flex;
   background: #0f1b2d;
-  border-top: 1px solid #22334a;
-  height: 56px;
-  padding: 4px 0;
-  allign-items: center;
+  border-top: 2px solid #c9b97a;
+  height: 72px;
+  min-height: 72px;
+  padding: 6px 0 10px;
+  align-items: center;
   justify-content: space-around;
   overflow-x: auto;
   overflow-y: visible;
   scrollbar-width: none;
   flex-shrink: 0;
+  z-index: 100;
 }
 .tabbar::-webkit-scrollbar { display: none; }
 
 .tab {
   flex: 1;
-  min-width: 50px;
+  min-width: 48px;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  gap: 1px;
+  gap: 4px;
   cursor: pointer;
+  padding: 2px 0;
 }
 
 .tab svg,
@@ -247,15 +250,16 @@ html, body { width:100%; height:100%; overflow:hidden; background:var(--bg-deep)
 }
 
 .tab-lbl {
-  font-size: 11px;
-  font-weight: 600;
-  color: #e2e8f0;
+  font-size: 10px;
+  font-weight: 700;
+  color: #ffffff;
+  text-shadow: 0 1px 3px rgba(0,0,0,0.6);
   line-height: 1;
   white-space: nowrap;
-  display: block;
-  visibility: visible;
-  opacity: 1;
-  margin-top: 1px;
+  display: block !important;
+  visibility: visible !important;
+  opacity: 1 !important;
+  overflow: visible;
 }
 
 /* Active state */
@@ -268,7 +272,7 @@ html, body { width:100%; height:100%; overflow:hidden; background:var(--bg-deep)
 }
 .tab.on .tab-lbl {
   color: #ffd369;
-  font-weight: 600;
+  font-weight: 700;
 }
 
 /* ── STICKY BOTTOM BARS ──────────────────────────────────── */
