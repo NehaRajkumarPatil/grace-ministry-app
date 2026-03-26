@@ -14,7 +14,7 @@ function applyTheme(mode) {
   const meta = document.getElementById("theme-meta");
   if (btn)  btn.classList.toggle("light", isLight);
   if (lbl)  lbl.textContent = isLight ? "☀️" : "🌙";
-  if (meta) meta.content    = isLight ? "#ffffff" : "#0d1b2a";
+  if (meta) meta.content    = isLight ? "#ffffff" : "#800000";
   localStorage.setItem("gm-theme", mode);
 }
 
@@ -80,23 +80,11 @@ async function loadDailyVerseFromAPI() {
 loadDailyVerseFromAPI();
 
 // ─────────────────────────────────────────────────────────────
-// OTP COUNTDOWN
-// ─────────────────────────────────────────────────────────────
-let otpSec = 45;
-function runOtpTimer() {
-  const el = document.getElementById("otp-timer");
-  if (!el) return;
-  el.textContent = "00:" + (otpSec < 10 ? "0" : "") + otpSec;
-  if (otpSec > 0) { otpSec--; setTimeout(runOtpTimer, 1000); }
-  else { el.textContent = "Resend"; el.style.cursor = "pointer"; }
-}
-
-// ─────────────────────────────────────────────────────────────
 // TAB SWITCHING — expanded screen list
 // ─────────────────────────────────────────────────────────────
 const mainScreens = [
   "home","devotional","sermons","media","events",
-  "prayer-wall","volunteer","give","ai","connect",
+  "prayer-wall","volunteer","give","connect",
   "prayer","profile","about","privacy"
 ];
 
@@ -111,7 +99,6 @@ function switchTab(n) {
   if (tabbar) tabbar.style.display = mainScreens.includes(n) ? "flex" : "none";
   const fab = document.getElementById("fab-wrap");
   if (fab) fab.classList.toggle("on", mainScreens.includes(n));
-  if (n === "otp")        runOtpTimer();
   if (n === "profile")    renderProfile();
   if (n === "devotional") renderDevotionalIfNeeded();
   if (n === "media")      { window._mediaFilter = window._mediaFilter || "all"; loadMediaFeed?.(window._mediaFilter); }

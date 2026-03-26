@@ -162,24 +162,28 @@ async function loadTodayDevotional() {
   } catch (err) { console.warn("Devotional error:", err.message); }
 }
 
+function esc(str) {
+  return String(str || "").replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;").replace(/"/g,"&quot;");
+}
+
 function renderDevotionalScreen(d) {
   const container = document.getElementById("devot-content");
   if (!container || !d) return;
-  const dateStr = d.date || d.createdAt?.slice(0,10) || new Date().toISOString().slice(0,10);
+  const dateStr = esc(d.date || d.createdAt?.slice(0,10) || new Date().toISOString().slice(0,10));
   container.innerHTML = `
     <div class="devot-card">
       <div class="devot-card-header">
         <div class="devot-date">📖 Devotional · ${dateStr}</div>
-        <div class="devot-title">${d.title || ""}</div>
+        <div class="devot-title">${esc(d.title)}</div>
       </div>
       <div class="devot-body">
         <div class="devot-verse-block">
-          <div class="devot-verse-text">${d.verse || ""}</div>
+          <div class="devot-verse-text">${esc(d.verse)}</div>
         </div>
-        <div class="devot-message">${(d.message || "").replace(/\n/g, "<br>")}</div>
+        <div class="devot-message">${esc(d.message).replace(/\n/g, "<br>")}</div>
         ${d.prayer ? `<div class="devot-prayer-block">
           <div class="devot-prayer-label">🙏 Prayer</div>
-          <div class="devot-prayer-text">${d.prayer}</div>
+          <div class="devot-prayer-text">${esc(d.prayer)}</div>
         </div>` : ""}
       </div>
     </div>`;
@@ -201,10 +205,10 @@ async function loadSermonsFromFirestore() {
       const s = doc.data();
       const row = document.createElement("a");
       row.href = s.youtubeLink || "https://www.youtube.com/@GraceMinistryMangalore";
-      row.target = "_blank"; row.className = "sermon-row";
+      row.target = "_blank"; row.rel = "noopener noreferrer"; row.className = "sermon-row";
       row.innerHTML = `<div class="thumb"><div class="play-tri"></div></div>
-        <div style="flex:1"><div class="s-title">${s.title||"Sermon"}</div>
-        <div class="s-meta">${s.speaker||""} · ${s.date||""}</div>
+        <div style="flex:1"><div class="s-title">${esc(s.title)||"Sermon"}</div>
+        <div class="s-meta">${esc(s.speaker)||""} · ${esc(s.date)||""}</div>
         <div class="s-dur">▶ Watch on YouTube</div></div>
         <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#334455" stroke-width="2"><polyline points="9 18 15 12 9 6"/></svg>`;
       container.appendChild(row);
@@ -312,7 +316,7 @@ function renderMediaCards(items) {
     return `<div class="media-card-new" onclick="window.open('${url}','_blank')">
       <div class="media-card-thumb">
         <div class="media-card-icon">${icon}</div>
-        <div class="media-card-play"><svg width="18" height="18" viewBox="0 0 24 24" fill="#0d1b2a"><polygon points="5 3 19 12 5 21 5 3"/></svg></div>
+        <div class="media-card-play"><svg width="18" height="18" viewBox="0 0 24 24" fill="#800000"><polygon points="5 3 19 12 5 21 5 3"/></svg></div>
         <span class="media-card-badge" style="background:${badgeBg};color:${badgeColor};border-color:${badgeColor}44">${type.toUpperCase()}</span>
       </div>
       <div class="media-card-body">
