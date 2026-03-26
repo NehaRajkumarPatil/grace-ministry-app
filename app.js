@@ -84,7 +84,7 @@ loadDailyVerseFromAPI();
 // ─────────────────────────────────────────────────────────────
 const mainScreens = [
   "home","devotional","sermons","media","events",
-  "prayer-wall","volunteer","give","ai","connect",
+  "prayer-wall","volunteer","give","connect",
   "prayer","profile","about","privacy"
 ];
 

@@ -5,7 +5,7 @@
 /* ── THEME VARIABLES ─────────────────────────────────────── */
 :root {
   --bg-deep: #4d0000; --bg-mid: #800000; --bg-card: #3d0000;
-  --border: #2a3a50; --border-gold: #c9b97a44;
+  --border: rgba(255,255,255,0.25); --border-gold: #c9b97a44;
   --text-primary: #dde8f0; --text-secondary: #8899aa;
   --text-muted: #667788; --text-dim: #445566;
   --gold: #c9b97a; --gold-text: #e8d48b;
@@ -126,7 +126,7 @@ html, body { width:100%; height:100%; overflow:hidden; background:var(--bg-deep)
 
 /* ── SERMONS ─────────────────────────────────────────────── */
 .sec-label { font-size:10px; color:var(--text-secondary); letter-spacing:1px; text-transform:uppercase; font-weight:500; padding:14px 16px 8px; }
-.sermon-row { display:flex; gap:12px; align-items:center; padding:12px 16px; border-bottom:0.5px solid var(--bg-card); cursor:pointer; text-decoration:none; }
+.sermon-row { display:flex; gap:12px; align-items:center; padding:12px 16px; border-bottom:0.5px solid rgba(255,255,255,0.18); cursor:pointer; text-decoration:none; }
 .thumb { width:50px; height:50px; border-radius:10px; background:var(--bg-card); display:flex; align-items:center; justify-content:center; flex-shrink:0; border:0.5px solid var(--gold-border); }
 .play-tri { width:0; height:0; border-style:solid; border-width:7px 0 7px 13px; border-color:transparent transparent transparent var(--gold); margin-left:4px; }
 .s-title { font-size:14px; font-weight:500; color:var(--text-primary); margin-bottom:2px; }
@@ -134,7 +134,7 @@ html, body { width:100%; height:100%; overflow:hidden; background:var(--bg-deep)
 .s-dur { font-size:11px; color:var(--gold); margin-top:3px; }
 
 /* ── EVENTS ──────────────────────────────────────────────── */
-.event-row { display:flex; gap:12px; align-items:center; padding:12px 16px; border-bottom:0.5px solid var(--bg-card); }
+.event-row { display:flex; gap:12px; align-items:center; padding:12px 16px; border-bottom:0.5px solid rgba(255,255,255,0.18); }
 .e-day { font-size:20px; font-weight:600; color:var(--gold); line-height:1; }
 .e-mon { font-size:10px; color:var(--text-secondary); text-transform:uppercase; letter-spacing:0.5px; }
 .e-title { font-size:13px; font-weight:500; color:var(--text-primary); }
@@ -175,7 +175,7 @@ html, body { width:100%; height:100%; overflow:hidden; background:var(--bg-deep)
 .tog.on .tog-txt { color:var(--gold); font-weight:500; }
 
 /* ── SCREEN HEADERS ──────────────────────────────────────── */
-.scr-hd { padding:12px 16px; border-bottom:0.5px solid var(--bg-card); background:var(--bg-mid); display:flex; align-items:center; gap:10px; }
+.scr-hd { padding:12px 16px; border-bottom:0.5px solid rgba(255,255,255,0.18); background:var(--bg-mid); display:flex; align-items:center; gap:10px; }
 .scr-hd-text { flex:1; }
 .scr-h { font-size:20px; font-weight:600; color:var(--gold-text); }
 .scr-s { font-size:12px; color:var(--text-secondary); margin-top:2px; }
@@ -189,7 +189,7 @@ html, body { width:100%; height:100%; overflow:hidden; background:var(--bg-deep)
 .ai-bub { background:var(--bg-card); border:0.5px solid var(--border); border-radius:16px 16px 16px 4px; padding:11px 13px; font-size:13px; color:var(--text-secondary); line-height:1.6; max-width:82%; white-space:pre-wrap; word-break:break-word; }
 .usr-row { flex-direction:row-reverse; }
 .usr-bub { background:var(--gold); border-radius:16px 16px 4px 16px; padding:11px 13px; font-size:13px; color:#800000; font-weight:500; line-height:1.6; max-width:82%; }
-.ai-bar { display:flex; gap:8px; padding:10px 14px 14px; border-top:0.5px solid var(--bg-card); background:var(--bg-deep); }
+.ai-bar { display:flex; gap:8px; padding:10px 14px 14px; border-top:0.5px solid rgba(255,255,255,0.18); background:var(--bg-deep); }
 .ai-inp { flex:1; background:var(--bg-card); border:0.5px solid var(--border); border-radius:22px; padding:10px 16px; font-size:13px; color:var(--text-primary); font-family:-apple-system,sans-serif; }
 .ai-inp:focus { outline:none; }
 .ai-inp::placeholder { color:var(--text-dim); }
@@ -252,18 +252,19 @@ html, body { width:100%; height:100%; overflow:hidden; background:var(--bg-deep)
 
 .tab-lbl {
   font-size: 10px;
-  font-weight: 700;
-  color: #ffffff;
-  text-shadow: 0 1px 3px rgba(0,0,0,0.6);
+  font-weight: 800;
+  color: #e8d4b0;
+  text-shadow: 0 1px 4px rgba(0,0,0,0.9), 0 0 8px rgba(0,0,0,0.6);
   line-height: 1;
   white-space: nowrap;
   display: block !important;
   visibility: visible !important;
   opacity: 1 !important;
   overflow: visible;
+  letter-spacing: 0.2px;
 }
 
-/* Active state */
+/* Active state — default gold */
 .tab.on svg,
 .tab.on i {
   color: #ffd369;
@@ -276,8 +277,49 @@ html, body { width:100%; height:100%; overflow:hidden; background:var(--bg-deep)
   font-weight: 700;
 }
 
+/* ── PER-TAB ACCENT COLOURS ──────────────────────────────── */
+/* Home — warm gold */
+#t-home.on .tab-ico { stroke: #ffd369; }
+#t-home.on .tab-lbl { color: #ffd369; }
+
+/* Sermons tab (now shows Media) — coral pink */
+#t-sermons .tab-ico { stroke: #f08080; }
+#t-sermons .tab-lbl { color: #f08080; }
+#t-sermons.on .tab-ico { stroke: #ff9999; }
+#t-sermons.on .tab-lbl { color: #ff9999; }
+
+/* Events — mint green */
+#t-events .tab-ico { stroke: #5ec98a; }
+#t-events .tab-lbl { color: #5ec98a; }
+#t-events.on .tab-ico { stroke: #7ee8a2; }
+#t-events.on .tab-lbl { color: #7ee8a2; }
+
+/* Prayer-wall tab (now shows Give) — bright green */
+#t-prayer-wall .tab-ico { stroke: #4cde80; }
+#t-prayer-wall .tab-lbl { color: #4cde80; }
+#t-prayer-wall.on .tab-ico { stroke: #6effa0; }
+#t-prayer-wall.on .tab-lbl { color: #6effa0; }
+
+/* Serve / Volunteer — warm orange */
+#t-volunteer .tab-ico { stroke: #f5a623; }
+#t-volunteer .tab-lbl { color: #f5a623; }
+#t-volunteer.on .tab-ico { stroke: #ffbf47; }
+#t-volunteer.on .tab-lbl { color: #ffbf47; }
+
+/* Give tab (now shows Prayer Wall) — rose gold */
+#t-give .tab-ico { stroke: #f4a7b9; }
+#t-give .tab-lbl { color: #f4a7b9; }
+#t-give.on .tab-ico { stroke: #ffc4d0; }
+#t-give.on .tab-lbl { color: #ffc4d0; }
+
+/* More / Connect — steel blue */
+#t-connect .tab-ico { stroke: #7aaccc; }
+#t-connect .tab-lbl { color: #7aaccc; }
+#t-connect.on .tab-ico { stroke: #9ac8e8; }
+#t-connect.on .tab-lbl { color: #9ac8e8; }
+
 /* ── STICKY BOTTOM BARS ──────────────────────────────────── */
-.screen-bottom { padding:8px 12px 10px; background:var(--bg-deep); border-top:0.5px solid var(--bg-card); flex-shrink:0; }
+.screen-bottom { padding:8px 12px 10px; background:var(--bg-deep); border-top:0.5px solid rgba(255,255,255,0.18); flex-shrink:0; }
 .bottom-btn { width:100%; padding:11px 8px; border:none; border-radius:12px; font-size:13px; font-weight:600; cursor:pointer; display:flex; align-items:center; justify-content:center; gap:6px; text-decoration:none; font-family:-apple-system,sans-serif; }
 .bottom-btn-gold { background:var(--gold); color:#800000; }
 .bottom-btn-gold:active { opacity:0.88; }

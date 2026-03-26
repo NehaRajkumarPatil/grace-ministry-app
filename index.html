@@ -21,6 +21,8 @@
 <link rel="manifest" href="manifest.json">
 
 <link rel="apple-touch-icon" href="images/icon-192.png">
+<link rel="icon" type="image/png" sizes="192x192" href="images/icon-192.png">
+<link rel="icon" type="image/png" sizes="512x512" href="images/icon-512.png">
 
 </head>
 
@@ -99,19 +101,7 @@
 
       <div class="auth-hero">
 
-        <svg width="70" height="70" viewBox="0 0 100 100" style="margin-bottom:14px">
-
-          <circle cx="50" cy="50" r="46" fill="none" stroke="#c9b97a" stroke-width="3.5"/>
-
-          <text x="50" y="62" text-anchor="middle" font-size="52" font-weight="700" fill="#c9b97a" font-family="Georgia,serif">G</text>
-
-          <ellipse cx="42" cy="50" rx="10" ry="14" fill="#800000" stroke="#c9b97a" stroke-width="1.5" transform="rotate(-20 42 50)"/>
-
-          <path d="M48 44 Q54 40 56 44 Q58 48 54 52 Q50 56 46 54 Q44 50 48 44Z" fill="#c9b97a"/>
-
-          <path d="M54 52 Q58 55 56 60" fill="none" stroke="#c9b97a" stroke-width="1.5" stroke-linecap="round"/>
-
-        </svg>
+        <img src="images/icon-192.png" width="70" height="70" style="border-radius:50%;object-fit:cover;border:2px solid #c9b97a;margin-bottom:14px" alt="Grace Ministry"/>
 
         <div class="auth-title">Welcome back</div>
 
@@ -139,7 +129,7 @@
 
         <div class="divider"><div class="div-line"></div><span class="div-txt">or</span><div class="div-line"></div></div>
 
-        <a href="https://wa.me/919880093988?text=Hi%20Grace%20Ministry%2C%20I%20want%20to%20register%20as%20a%20member." target="_blank" rel="noopener noreferrer" class="btn-outline">
+        <a href="https://wa.me/919880093988?text=Hi%20Grace%20Ministry%2C%20I%20want%20to%20register%20as%20a%20member." target="_blank" class="btn-outline">
 
           <svg width="18" height="18" viewBox="0 0 24 24" fill="#25d366"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.133.558 4.133 1.528 5.873L0 24l6.302-1.508A11.953 11.953 0 0 0 12 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.818a9.814 9.814 0 0 1-5.012-1.371l-.36-.214-3.733.893.924-3.638-.235-.373A9.807 9.807 0 0 1 2.182 12c0-5.419 4.399-9.818 9.818-9.818 5.419 0 9.818 4.399 9.818 9.818 0 5.419-4.399 9.818-9.818 9.818z"/></svg>
 
@@ -265,19 +255,7 @@
 
         <div class="logo-row">
 
-          <svg width="36" height="36" viewBox="0 0 100 100">
-
-            <circle cx="50" cy="50" r="46" fill="none" stroke="#c9b97a" stroke-width="4"/>
-
-            <text x="50" y="62" text-anchor="middle" font-size="52" font-weight="700" fill="#c9b97a" font-family="Georgia,serif">G</text>
-
-            <ellipse cx="42" cy="50" rx="9" ry="13" fill="#800000" stroke="#c9b97a" stroke-width="1.5" transform="rotate(-20 42 50)"/>
-
-            <path d="M48 44 Q54 40 56 44 Q58 48 54 52 Q50 56 46 54 Q44 50 48 44Z" fill="#c9b97a"/>
-
-            <path d="M54 52 Q57 55 55 60" fill="none" stroke="#c9b97a" stroke-width="1.5" stroke-linecap="round"/>
-
-          </svg>
+          <img src="images/icon-192.png" width="36" height="36" style="border-radius:50%;object-fit:cover;border:1.5px solid #c9b97a;flex-shrink:0" alt="Grace Ministry Logo"/>
 
           <div><div class="logo-txt-main">Grace Ministry</div><div class="logo-txt-sub">India &middot; Mangalore</div></div>
 
@@ -297,16 +275,24 @@
 
     <div class="scrollable">
 
-      <!-- Jesus Photo -->
-
-            <div style="text-align:center;padding:16px 24px 8px">
-        <div style="font-size:16px;color:#e8d48b;font-style:italic;line-height:1.7">"I am the way, the truth, and the life."</div>
-        <div style="font-size:12px;color:#c9b97a;margin-top:6px">&mdash; John 14:6</div>
+      <!-- Pastor Card with Quote -->
+      <div style="margin:14px 16px 10px;background:linear-gradient(135deg,#3d0000,#5a0a0a);border-radius:18px;border:0.5px solid #c9b97a44;overflow:hidden;display:flex;align-items:stretch;min-height:120px;">
+        <!-- Photo -->
+        <div style="flex-shrink:0;width:110px;position:relative;overflow:hidden;">
+          <img src="images/pastor.png" alt="Bro. Andrew Richard" style="width:110px;height:100%;object-fit:cover;object-position:top center;display:block;"/>
+          <div style="position:absolute;inset:0;background:linear-gradient(to right,transparent 70%,#3d0000);"></div>
+        </div>
+        <!-- Quote -->
+        <div style="flex:1;padding:14px 14px 14px 12px;display:flex;flex-direction:column;justify-content:center;">
+          <div style="font-size:11px;color:#c9b97a;letter-spacing:1.5px;text-transform:uppercase;font-weight:600;margin-bottom:8px">Bro. Andrew Richard</div>
+          <div style="font-size:13px;color:#e8d48b;font-style:italic;line-height:1.65;">"God's grace is sufficient for every need. Walk in faith, for He who called you is faithful."</div>
+          <div style="font-size:11px;color:#8899aa;margin-top:8px;">Grace Ministry India</div>
+        </div>
       </div>
 
       <!-- Live Service -->
 
-      <a href="https://www.youtube.com/@GraceMinistryMangalore/live" target="_blank" rel="noopener noreferrer" class="live-card" id="live-service-card">
+      <a href="https://www.youtube.com/@GraceMinistryMangalore/live" target="_blank" class="live-card" id="live-service-card">
 
         <div class="live-pulse"></div>
 
@@ -356,7 +342,7 @@
 
       <div id="home-sermons-list">
 
-        <a href="https://www.youtube.com/@GraceMinistryMangalore" target="_blank" rel="noopener noreferrer" class="sermon-row">
+        <a href="https://www.youtube.com/@GraceMinistryMangalore" target="_blank" class="sermon-row">
 
           <div class="thumb"><div class="play-tri"></div></div>
 
@@ -366,7 +352,7 @@
 
         </a>
 
-        <a href="https://www.youtube.com/@GraceMinistryMangalore" target="_blank" rel="noopener noreferrer" class="sermon-row">
+        <a href="https://www.youtube.com/@GraceMinistryMangalore" target="_blank" class="sermon-row">
 
           <div class="thumb"><div class="play-tri"></div></div>
 
@@ -408,7 +394,7 @@
 
         </a>
 
-        <a href="https://www.youtube.com/@GraceMinistryMangalore" target="_blank" rel="noopener noreferrer" class="bottom-btn bottom-btn-red">
+        <a href="https://www.youtube.com/@GraceMinistryMangalore" target="_blank" class="bottom-btn bottom-btn-red">
 
           <svg width="15" height="15" viewBox="0 0 24 24" fill="#fff"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
 
@@ -434,13 +420,13 @@
 
       <div id="sermons-list">
 
-        <a href="https://www.youtube.com/@GraceMinistryMangalore" target="_blank" rel="noopener noreferrer" class="sermon-row"><div class="thumb"><div class="play-tri"></div></div><div style="flex:1"><div class="s-title">Walking in Divine Healing</div><div class="s-meta">Bro. Andrew Richard &middot; Mar 2026</div><div class="s-dur"> Watch on YouTube</div></div><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#334455" stroke-width="2"><polyline points="9 18 15 12 9 6"/></svg></a>
+        <a href="https://www.youtube.com/@GraceMinistryMangalore" target="_blank" class="sermon-row"><div class="thumb"><div class="play-tri"></div></div><div style="flex:1"><div class="s-title">Walking in Divine Healing</div><div class="s-meta">Bro. Andrew Richard &middot; Mar 2026</div><div class="s-dur"> Watch on YouTube</div></div><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#334455" stroke-width="2"><polyline points="9 18 15 12 9 6"/></svg></a>
 
-        <a href="https://www.youtube.com/@GraceMinistryMangalore" target="_blank" rel="noopener noreferrer" class="sermon-row"><div class="thumb"><div class="play-tri"></div></div><div style="flex:1"><div class="s-title">The Power of God's Grace</div><div class="s-meta">Sunday Service &middot; Mar 2026</div><div class="s-dur"> Watch on YouTube</div></div><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#334455" stroke-width="2"><polyline points="9 18 15 12 9 6"/></svg></a>
+        <a href="https://www.youtube.com/@GraceMinistryMangalore" target="_blank" class="sermon-row"><div class="thumb"><div class="play-tri"></div></div><div style="flex:1"><div class="s-title">The Power of God's Grace</div><div class="s-meta">Sunday Service &middot; Mar 2026</div><div class="s-dur"> Watch on YouTube</div></div><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#334455" stroke-width="2"><polyline points="9 18 15 12 9 6"/></svg></a>
 
-        <a href="https://www.youtube.com/@GraceMinistryMangalore" target="_blank" rel="noopener noreferrer" class="sermon-row"><div class="thumb"><div class="play-tri"></div></div><div style="flex:1"><div class="s-title">Faith That Moves Mountains</div><div class="s-meta">Bro. Andrew Richard &middot; Feb 2026</div><div class="s-dur"> Watch on YouTube</div></div><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#334455" stroke-width="2"><polyline points="9 18 15 12 9 6"/></svg></a>
+        <a href="https://www.youtube.com/@GraceMinistryMangalore" target="_blank" class="sermon-row"><div class="thumb"><div class="play-tri"></div></div><div style="flex:1"><div class="s-title">Faith That Moves Mountains</div><div class="s-meta">Bro. Andrew Richard &middot; Feb 2026</div><div class="s-dur"> Watch on YouTube</div></div><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#334455" stroke-width="2"><polyline points="9 18 15 12 9 6"/></svg></a>
 
-        <a href="https://www.youtube.com/@GraceMinistryMangalore" target="_blank" rel="noopener noreferrer" class="sermon-row"><div class="thumb"><div class="play-tri"></div></div><div style="flex:1"><div class="s-title">Peace in the Storm</div><div class="s-meta">Sunday Service &middot; Feb 2026</div><div class="s-dur"> Watch on YouTube</div></div><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#334455" stroke-width="2"><polyline points="9 18 15 12 9 6"/></svg></a>
+        <a href="https://www.youtube.com/@GraceMinistryMangalore" target="_blank" class="sermon-row"><div class="thumb"><div class="play-tri"></div></div><div style="flex:1"><div class="s-title">Peace in the Storm</div><div class="s-meta">Sunday Service &middot; Feb 2026</div><div class="s-dur"> Watch on YouTube</div></div><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#334455" stroke-width="2"><polyline points="9 18 15 12 9 6"/></svg></a>
 
       </div>
 
@@ -448,7 +434,7 @@
 
     <div class="screen-bottom">
 
-      <a href="https://www.youtube.com/channel/UCRCRsPt3Xm_OI-tN9on4Z3g?sub_confirmation=1" target="_blank" rel="noopener noreferrer" class="bottom-btn bottom-btn-red">
+      <a href="https://www.youtube.com/channel/UCRCRsPt3Xm_OI-tN9on4Z3g?sub_confirmation=1" target="_blank" class="bottom-btn bottom-btn-red">
 
         <svg width="16" height="16" viewBox="0 0 24 24" fill="#fff"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
 
@@ -556,15 +542,15 @@
 
         <div class="sec-label">March 2026</div>
 
-        <div class="event-row"><div style="width:38px;text-align:center"><div class="e-day">15</div><div class="e-mon">Mar</div></div><div style="flex:1"><div class="e-title">Sunday Healing Service</div><div class="e-time">10:00 AM &middot; Main Auditorium &middot; Mangalore</div></div><a href="https://wa.me/919880093988?text=Register%3A%20Sunday%20Healing%20Service%2015%20Mar" target="_blank" rel="noopener noreferrer" class="reg-btn"><div class="reg-txt">Register</div></a></div>
+        <div class="event-row"><div style="width:38px;text-align:center"><div class="e-day">15</div><div class="e-mon">Mar</div></div><div style="flex:1"><div class="e-title">Sunday Healing Service</div><div class="e-time">10:00 AM &middot; Main Auditorium &middot; Mangalore</div></div><a href="https://wa.me/919880093988?text=Register%3A%20Sunday%20Healing%20Service%2015%20Mar" target="_blank" class="reg-btn"><div class="reg-txt">Register</div></a></div>
 
-        <div class="event-row"><div style="width:38px;text-align:center"><div class="e-day">22</div><div class="e-mon">Mar</div></div><div style="flex:1"><div class="e-title">Youth Prayer Night</div><div class="e-time">6:30 PM &middot; Church Hall &middot; Mangalore</div></div><a href="https://wa.me/919880093988?text=Register%3A%20Youth%20Prayer%20Night%2022%20Mar" target="_blank" rel="noopener noreferrer" class="reg-btn"><div class="reg-txt">Register</div></a></div>
+        <div class="event-row"><div style="width:38px;text-align:center"><div class="e-day">22</div><div class="e-mon">Mar</div></div><div style="flex:1"><div class="e-title">Youth Prayer Night</div><div class="e-time">6:30 PM &middot; Church Hall &middot; Mangalore</div></div><a href="https://wa.me/919880093988?text=Register%3A%20Youth%20Prayer%20Night%2022%20Mar" target="_blank" class="reg-btn"><div class="reg-txt">Register</div></a></div>
 
         <div class="sec-label">April 2026</div>
 
-        <div class="event-row"><div style="width:38px;text-align:center"><div class="e-day">18</div><div class="e-mon">Apr</div></div><div style="flex:1"><div class="e-title">Good Friday Service</div><div class="e-time">9:00 AM &middot; All day</div></div><a href="https://wa.me/919880093988?text=Register%3A%20Good%20Friday%20Service" target="_blank" rel="noopener noreferrer" class="reg-btn"><div class="reg-txt">Register</div></a></div>
+        <div class="event-row"><div style="width:38px;text-align:center"><div class="e-day">18</div><div class="e-mon">Apr</div></div><div style="flex:1"><div class="e-title">Good Friday Service</div><div class="e-time">9:00 AM &middot; All day</div></div><a href="https://wa.me/919880093988?text=Register%3A%20Good%20Friday%20Service" target="_blank" class="reg-btn"><div class="reg-txt">Register</div></a></div>
 
-        <div class="event-row"><div style="width:38px;text-align:center"><div class="e-day">20</div><div class="e-mon">Apr</div></div><div style="flex:1"><div class="e-title">Easter Celebration</div><div class="e-time">7:00 AM &middot; Sunrise Service</div></div><a href="https://wa.me/919880093988?text=Register%3A%20Easter%20Celebration" target="_blank" rel="noopener noreferrer" class="reg-btn"><div class="reg-txt">Register</div></a></div>
+        <div class="event-row"><div style="width:38px;text-align:center"><div class="e-day">20</div><div class="e-mon">Apr</div></div><div style="flex:1"><div class="e-title">Easter Celebration</div><div class="e-time">7:00 AM &middot; Sunrise Service</div></div><a href="https://wa.me/919880093988?text=Register%3A%20Easter%20Celebration" target="_blank" class="reg-btn"><div class="reg-txt">Register</div></a></div>
 
       </div>
 
@@ -584,7 +570,7 @@
 
       <div class="bottom-btn-row">
 
-        <a href="https://wa.me/919880093988?text=I%20want%20to%20register%20for%20an%20event" target="_blank" rel="noopener noreferrer" class="bottom-btn bottom-btn-green">Register via WhatsApp</a>
+        <a href="https://wa.me/919880093988?text=I%20want%20to%20register%20for%20an%20event" target="_blank" class="bottom-btn bottom-btn-green">Register via WhatsApp</a>
 
         <a href="upi://pay?pa=andrewvilla307-3@oksbi&pn=Andrew%20Richard&aid=uGICAgIDQx8eiXg" class="bottom-btn bottom-btn-gold">Give Now</a>
 
@@ -680,15 +666,17 @@
 
       <div class="c-grid">
 
-        <a href="https://www.youtube.com/@GraceMinistryMangalore" target="_blank" rel="noopener noreferrer" class="c-card"><div class="c-icon" style="background:#1a0000"><svg width="20" height="20" viewBox="0 0 24 24" fill="#ff0000"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg></div><div class="c-name">YouTube</div><div class="c-sub">@GraceMinistryMangalore</div></a>
+        <a href="https://www.youtube.com/@GraceMinistryMangalore" target="_blank" class="c-card"><div class="c-icon" style="background:#1a0000"><svg width="20" height="20" viewBox="0 0 24 24" fill="#ff0000"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg></div><div class="c-name">YouTube</div><div class="c-sub">@GraceMinistryMangalore</div></a>
 
-        <a href="https://www.graceministryindia.org/" target="_blank" rel="noopener noreferrer" class="c-card"><div class="c-icon" style="background:#1a1000"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#c9b97a" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg></div><div class="c-name">Website</div><div class="c-sub">graceministryindia.org</div></a>
+        <a href="https://www.graceministryindia.org/" target="_blank" class="c-card"><div class="c-icon" style="background:#1a1000"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#c9b97a" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg></div><div class="c-name">Website</div><div class="c-sub">graceministryindia.org</div></a>
 
-        <a href="https://wa.me/919880093988" target="_blank" rel="noopener noreferrer" class="c-card"><div class="c-icon" style="background:#002210"><svg width="20" height="20" viewBox="0 0 24 24" fill="#25d366"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.133.558 4.133 1.528 5.873L0 24l6.302-1.508A11.953 11.953 0 0 0 12 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.818a9.814 9.814 0 0 1-5.012-1.371l-.36-.214-3.733.893.924-3.638-.235-.373A9.807 9.807 0 0 1 2.182 12c0-5.419 4.399-9.818 9.818-9.818 5.419 0 9.818 4.399 9.818 9.818 0 5.419-4.399 9.818-9.818 9.818z"/></svg></div><div class="c-name">WhatsApp</div><div class="c-sub">+91 98800 93988</div></a>
+        <a href="https://wa.me/919880093988" target="_blank" class="c-card"><div class="c-icon" style="background:#002210"><svg width="20" height="20" viewBox="0 0 24 24" fill="#25d366"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.133.558 4.133 1.528 5.873L0 24l6.302-1.508A11.953 11.953 0 0 0 12 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.818a9.814 9.814 0 0 1-5.012-1.371l-.36-.214-3.733.893.924-3.638-.235-.373A9.807 9.807 0 0 1 2.182 12c0-5.419 4.399-9.818 9.818-9.818 5.419 0 9.818 4.399 9.818 9.818 0 5.419-4.399 9.818-9.818 9.818z"/></svg></div><div class="c-name">WhatsApp</div><div class="c-sub">+91 98800 93988</div></a>
 
-        <a href="https://www.instagram.com/graceministrymlr/" target="_blank" rel="noopener noreferrer" class="c-card"><div class="c-icon" style="background:#1a0010"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#e1306c" stroke-width="2" stroke-linecap="round"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1.5" fill="#e1306c" stroke="none"/></svg></div><div class="c-name">Instagram</div><div class="c-sub">@graceministrymlr</div></a>
+        <a href="https://www.instagram.com/graceministrymlr/" target="_blank" class="c-card"><div class="c-icon" style="background:#1a0010"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#e1306c" stroke-width="2" stroke-linecap="round"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1.5" fill="#e1306c" stroke="none"/></svg></div><div class="c-name">Instagram</div><div class="c-sub">@graceministrymlr</div></a>
 
         <a href="tel:+919880093988" class="c-card"><div class="c-icon" style="background:#001220"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#4a9eff" stroke-width="2" stroke-linecap="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.6 3.4 2 2 0 0 1 3.6 1.22h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.81a16 16 0 0 0 6.29 6.29l.95-.95a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg></div><div class="c-name">Call Us</div><div class="c-sub">+91 98800 93988</div></a>
+
+        <a href="https://search.google.com/local/writereview?placeid=ChIJozrMnwgbrjsRf1T7RuRS_Y4" target="_blank" class="c-card"><div class="c-icon" style="background:#1a1200"><svg width="20" height="20" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" fill="#4285F4"/><path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"/><path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l3.66-2.84z" fill="#FBBC05"/><path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" fill="#EA4335"/></svg></div><div class="c-name">Review</div><div class="c-sub">Rate on Google</div></a>
 
       </div>
 
@@ -698,9 +686,9 @@
 
       <div style="padding:8px 16px 20px">
 
-        <a href="https://search.google.com/local/writereview?placeid=ChIJozrMnwgbrjsRf1T7RuRS_Y4" target="_blank" rel="noopener noreferrer" class="give-card"><div><div class="give-title">⭐ Review on Google</div><div class="give-sub">Share your experience</div></div><span style="color:#c9b97a;font-size:20px"></span></a>
+        <a href="https://search.google.com/local/writereview?placeid=ChIJozrMnwgbrjsRf1T7RuRS_Y4" target="_blank" class="give-card"><div><div class="give-title">⭐ Review on Google</div><div class="give-sub">Share your experience</div></div><span style="color:#c9b97a;font-size:20px"></span></a>
 
-        <a href="https://www.instagram.com/graceministrymlr/" target="_blank" rel="noopener noreferrer" class="give-card"><div><div class="give-title"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#e1306c" stroke-width="2" style="vertical-align:middle;margin-right:4px"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/></svg> Follow on Instagram</div><div class="give-sub">@graceministrymlr</div></div><span style="color:#c9b97a;font-size:20px"></span></a>
+        <a href="https://www.instagram.com/graceministrymlr/" target="_blank" class="give-card"><div><div class="give-title"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#e1306c" stroke-width="2" style="vertical-align:middle;margin-right:4px"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/></svg> Follow on Instagram</div><div class="give-sub">@graceministrymlr</div></div><span style="color:#c9b97a;font-size:20px"></span></a>
 
         <div onclick="switchTab('about')" class="give-card" style="cursor:pointer"><div><div class="give-title">️ About Grace Ministry</div><div class="give-sub">Our mission, story &amp; team</div></div><span style="color:#c9b97a;font-size:20px"></span></div>
 
@@ -724,9 +712,9 @@
 
       <div class="bottom-btn-row">
 
-        <a href="https://wa.me/919880093988" target="_blank" rel="noopener noreferrer" class="bottom-btn bottom-btn-green">WhatsApp Us</a>
+        <a href="https://wa.me/919880093988" target="_blank" class="bottom-btn bottom-btn-green">WhatsApp Us</a>
 
-        <a href="https://search.google.com/local/writereview?placeid=ChIJozrMnwgbrjsRf1T7RuRS_Y4" target="_blank" rel="noopener noreferrer" class="bottom-btn bottom-btn-dark">⭐ Review Us</a>
+        <a href="https://search.google.com/local/writereview?placeid=ChIJozrMnwgbrjsRf1T7RuRS_Y4" target="_blank" class="bottom-btn bottom-btn-dark">⭐ Review Us</a>
 
       </div>
 
@@ -790,13 +778,13 @@
 
         <div class="about-loc-card"><div style="width:36px;height:36px;background:#c9b97a22;border-radius:10px;display:flex;align-items:center;justify-content:center"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#c9b97a" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg></div><div><div style="font-size:14px;font-weight:600;color:#dde8f0">Bangalore, Karnataka</div><div style="font-size:12px;color:#8899aa">Second location</div></div></div>
 
-        <a href="https://www.graceministryindia.org/" target="_blank" rel="noopener noreferrer" class="about-btn" style="background:#c9b97a;color:#800000;margin-top:16px"> Visit Website</a>
+        <a href="https://www.graceministryindia.org/" target="_blank" class="about-btn" style="background:#c9b97a;color:#800000;margin-top:16px"> Visit Website</a>
 
-        <a href="https://www.instagram.com/graceministrymlr/" target="_blank" rel="noopener noreferrer" class="about-btn" style="background:#e1306c;color:#fff"> Follow on Instagram</a>
+        <a href="https://www.instagram.com/graceministrymlr/" target="_blank" class="about-btn" style="background:#e1306c;color:#fff"> Follow on Instagram</a>
 
-        <a href="https://www.youtube.com/@GraceMinistryMangalore" target="_blank" rel="noopener noreferrer" class="about-btn" style="background:#ff0000;color:#fff"> Watch on YouTube</a>
+        <a href="https://www.youtube.com/@GraceMinistryMangalore" target="_blank" class="about-btn" style="background:#ff0000;color:#fff"> Watch on YouTube</a>
 
-        <a href="https://wa.me/919880093988" target="_blank" rel="noopener noreferrer" class="about-btn" style="background:#25d366;color:#fff"> WhatsApp Us</a>
+        <a href="https://wa.me/919880093988" target="_blank" class="about-btn" style="background:#25d366;color:#fff"> WhatsApp Us</a>
 
       </div>
 
@@ -906,7 +894,7 @@
 
         <button onclick="shareDevotional()" class="bottom-btn bottom-btn-dark">&#8599; Share</button>
 
-        <a href="https://wa.me/919880093988" target="_blank" rel="noopener noreferrer" class="bottom-btn bottom-btn-green"> Discuss</a>
+        <a href="https://wa.me/919880093988" target="_blank" class="bottom-btn bottom-btn-green"> Discuss</a>
 
       </div>
 
@@ -972,7 +960,7 @@
 
     <div class="screen-bottom">
 
-      <a href="https://www.youtube.com/@GraceMinistryMangalore" target="_blank" rel="noopener noreferrer" class="bottom-btn bottom-btn-red">
+      <a href="https://www.youtube.com/@GraceMinistryMangalore" target="_blank" class="bottom-btn bottom-btn-red">
 
         <svg width="15" height="15" viewBox="0 0 24 24" fill="#fff"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
 
@@ -1150,21 +1138,15 @@
 
     <div class="tab on" id="t-home" onclick="switchTab('home')"><svg class="tab-ico" viewBox="0 0 24 24"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg><span class="tab-lbl">Home</span></div>
 
-    <div class="tab" id="t-devotional" onclick="switchTab('devotional')"><svg class="tab-ico" viewBox="0 0 24 24"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg><span class="tab-lbl">Devot.</span></div>
-
-    <div class="tab" id="t-sermons" onclick="switchTab('sermons')"><svg class="tab-ico" viewBox="0 0 24 24"><polygon points="5 3 19 12 5 21 5 3"/></svg><span class="tab-lbl">Sermons</span></div>
-
-    <div class="tab" id="t-media" onclick="switchTab('media')"><svg class="tab-ico" viewBox="0 0 24 24"><rect x="2" y="7" width="20" height="15" rx="2"/><polyline points="17 2 12 7 7 2"/></svg><span class="tab-lbl">Media</span></div>
+    <div class="tab" id="t-sermons" onclick="switchTab('media')"><svg class="tab-ico" viewBox="0 0 24 24"><rect x="2" y="7" width="20" height="15" rx="2"/><polyline points="17 2 12 7 7 2"/></svg><span class="tab-lbl">Media</span></div>
 
     <div class="tab" id="t-events" onclick="switchTab('events')"><svg class="tab-ico" viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg><span class="tab-lbl">Events</span></div>
 
-    <div class="tab" id="t-prayer-wall" onclick="switchTab('prayer-wall')"><svg class="tab-ico" viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg><span class="tab-lbl">Prayer</span></div>
+    <div class="tab" id="t-prayer-wall" onclick="switchTab('give')"><svg class="tab-ico" viewBox="0 0 24 24"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg><span class="tab-lbl">Give</span></div>
 
     <div class="tab" id="t-volunteer" onclick="switchTab('volunteer')"><svg class="tab-ico" viewBox="0 0 24 24"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg><span class="tab-lbl">Serve</span></div>
 
-    <div class="tab" id="t-give" onclick="switchTab('give')"><svg class="tab-ico" viewBox="0 0 24 24"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg><span class="tab-lbl">Give</span></div>
-
-    <div class="tab" id="t-ai" onclick="switchTab('ai')"><svg class="tab-ico" viewBox="0 0 24 24"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg><span class="tab-lbl">AI Bible</span></div>
+    <div class="tab" id="t-give" onclick="switchTab('prayer-wall')"><svg class="tab-ico" viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg><span class="tab-lbl">Prayer</span></div>
 
     <div class="tab" id="t-connect" onclick="switchTab('connect')"><svg class="tab-ico" viewBox="0 0 24 24"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg><span class="tab-lbl">More</span></div>
 
@@ -1182,7 +1164,7 @@
 
   <div class="fab-row"><span class="fab-label">Call Us</span><a href="tel:+919880093988" class="fab fab-call"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.6 3.4 2 2 0 0 1 3.6 1.22h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.81a16 16 0 0 0 6.29 6.29l.95-.95a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg></a></div>
 
-  <div class="fab-row"><span class="fab-label">WhatsApp</span><a href="https://wa.me/919880093988" target="_blank" rel="noopener noreferrer" class="fab fab-wa"><svg width="22" height="22" viewBox="0 0 24 24" fill="#fff"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.133.558 4.133 1.528 5.873L0 24l6.302-1.508A11.953 11.953 0 0 0 12 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.818a9.814 9.814 0 0 1-5.012-1.371l-.36-.214-3.733.893.924-3.638-.235-.373A9.807 9.807 0 0 1 2.182 12c0-5.419 4.399-9.818 9.818-9.818 5.419 0 9.818 4.399 9.818 9.818 0 5.419-4.399 9.818-9.818 9.818z"/></svg></a></div>
+  <div class="fab-row"><span class="fab-label">WhatsApp</span><a href="https://wa.me/919880093988" target="_blank" class="fab fab-wa"><svg width="22" height="22" viewBox="0 0 24 24" fill="#fff"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.133.558 4.133 1.528 5.873L0 24l6.302-1.508A11.953 11.953 0 0 0 12 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.818a9.814 9.814 0 0 1-5.012-1.371l-.36-.214-3.733.893.924-3.638-.235-.373A9.807 9.807 0 0 1 2.182 12c0-5.419 4.399-9.818 9.818-9.818 5.419 0 9.818 4.399 9.818 9.818 0 5.419-4.399 9.818-9.818 9.818z"/></svg></a></div>
 
 </div>
 
@@ -1224,9 +1206,9 @@
 
     <div class="share-grid">
 
-      <a href="https://wa.me/?text=Check%20out%20Grace%20Ministry%20India%20%F0%9F%99%8F%20https%3A%2F%2Fwww.graceministryindia.org" target="_blank" rel="noopener noreferrer" class="share-item"><div class="share-icon" style="background:#002210"><svg width="24" height="24" viewBox="0 0 24 24" fill="#25d366"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.133.558 4.133 1.528 5.873L0 24l6.302-1.508A11.953 11.953 0 0 0 12 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.818a9.814 9.814 0 0 1-5.012-1.371l-.36-.214-3.733.893.924-3.638-.235-.373A9.807 9.807 0 0 1 2.182 12c0-5.419 4.399-9.818 9.818-9.818 5.419 0 9.818 4.399 9.818 9.818 0 5.419-4.399 9.818-9.818 9.818z"/></svg></div><div class="share-lbl">WhatsApp</div></a>
+      <a href="https://wa.me/?text=Check%20out%20Grace%20Ministry%20India%20%F0%9F%99%8F%20https%3A%2F%2Fwww.graceministryindia.org" target="_blank" class="share-item"><div class="share-icon" style="background:#002210"><svg width="24" height="24" viewBox="0 0 24 24" fill="#25d366"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.133.558 4.133 1.528 5.873L0 24l6.302-1.508A11.953 11.953 0 0 0 12 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.818a9.814 9.814 0 0 1-5.012-1.371l-.36-.214-3.733.893.924-3.638-.235-.373A9.807 9.807 0 0 1 2.182 12c0-5.419 4.399-9.818 9.818-9.818 5.419 0 9.818 4.399 9.818 9.818 0 5.419-4.399 9.818-9.818 9.818z"/></svg></div><div class="share-lbl">WhatsApp</div></a>
 
-      <a href="https://www.instagram.com/graceministrymlr/" target="_blank" rel="noopener noreferrer" class="share-item"><div class="share-icon" style="background:#1a0010"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#e1306c" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1.5" fill="#e1306c" stroke="none"/></svg></div><div class="share-lbl">Instagram</div></a>
+      <a href="https://www.instagram.com/graceministrymlr/" target="_blank" class="share-item"><div class="share-icon" style="background:#1a0010"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#e1306c" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1.5" fill="#e1306c" stroke="none"/></svg></div><div class="share-lbl">Instagram</div></a>
 
       <div onclick="copyLink()" class="share-item" style="cursor:pointer"><div class="share-icon" style="background:#3d0000"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#8899aa" stroke-width="2"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg></div><div class="share-lbl" id="copy-link-lbl">Copy Link</div></div>
 
