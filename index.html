@@ -1,4 +1,4 @@
-?<!DOCTYPE html>
+<!DOCTYPE html>
 
 <html lang="en">
 
@@ -6,7 +6,7 @@
 
 <meta charset="UTF-8">
 
-<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
 
 <meta name="apple-mobile-web-app-capable" content="yes">
 
@@ -44,9 +44,9 @@
 
     <span style="color:#c9b97a;font-weight:600;font-size:11px">GRACE MINISTRY</span>
 
-    <div class="theme-toggle-wrap" onclick="toggleTheme()" style="margin-left:auto">
+    <div class="theme-toggle-wrap" onclick="toggleTheme()">
 
-      <span class="theme-lbl" id="theme-lbl">🌙</span>
+      <span class="theme-lbl" id="theme-lbl">?</span>
 
       <button class="theme-toggle" id="theme-toggle"></button>
 
@@ -717,42 +717,6 @@
         <a href="https://search.google.com/local/writereview?placeid=ChIJozrMnwgbrjsRf1T7RuRS_Y4" target="_blank" class="bottom-btn bottom-btn-dark">⭐ Review Us</a>
 
       </div>
-
-    </div>
-
-  </div>
-
-
-
-  <!--  AI BIBLE  -->
-
-  <div id="s-ai" class="scr">
-
-    <div class="scr-hd"><button class="back-btn" onclick="switchTab('home')"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#c9b97a" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"/></svg></button><div class="scr-hd-text"><div class="scr-h">Bible Assistant</div><div class="scr-s">Powered by Grace Ministry</div></div></div>
-
-    <div id="ai-msgs" class="ai-msgs">
-
-      <div class="ai-row"><div class="ai-ava">G</div><div class="ai-bub">Peace be with you!  I'm the Grace Ministry Bible Assistant. Ask me about any verse, seek prayer guidance, or explore Scripture together.</div></div>
-
-    </div>
-
-    <div class="ai-suggest">
-
-      <div class="ai-chip" onclick="askChip('What does the Bible say about healing?')">Healing </div>
-
-      <div class="ai-chip" onclick="askChip('Give me a verse for strength today')">Strength </div>
-
-      <div class="ai-chip" onclick="askChip('What does John 3:16 mean?')">John 3:16</div>
-
-      <div class="ai-chip" onclick="askChip('How do I overcome fear according to the Bible?')">Fear &amp; Courage</div>
-
-    </div>
-
-    <div class="ai-bar">
-
-      <input class="ai-inp" id="ai-q" placeholder="Ask about any verse or topic..." onkeydown="if(event.key==='Enter')askBible()"/>
-
-      <button class="ai-send" onclick="askBible()"><svg width="13" height="13" viewBox="0 0 24 24" fill="#800000"><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg></button>
 
     </div>
 
