@@ -30,10 +30,7 @@ body.light {
 html, body { width:100%; height:100%; overflow:hidden; background:var(--bg-deep); }
 .frame  { background:var(--bg-deep); display:flex; justify-content:center; align-items:stretch; width:100%; height:100vh; }
 .phone  { width:100%; max-width:480px; background:var(--bg-deep); display:flex; flex-direction:column; font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif; height:100vh; overflow:visible; }
-<<<<<<< HEAD
-=======
 /* overflow:visible ensures tabbar labels are not clipped */
->>>>>>> e3db19d
 .sb     { display:flex; justify-content:space-between; align-items:center; padding:10px 22px 4px; color:var(--text-secondary); font-size:11px; background:var(--bg-mid); }
 
 /* ── SCREENS ─────────────────────────────────────────────── */
@@ -48,7 +45,7 @@ html, body { width:100%; height:100%; overflow:hidden; background:var(--bg-deep)
 .theme-toggle.light { background:var(--gold); }
 .theme-toggle::after { content:""; position:absolute; width:16px; height:16px; border-radius:50%; background:#fff; top:3px; left:3px; transition:transform 0.3s; }
 .theme-toggle.light::after { transform:translateX(16px); }
-.theme-lbl { font-size:10px; color:var(--text-muted); }
+.theme-lbl { font-size:12px; color:var(--gold); font-weight:600; }
 
 /* ── AUTH ────────────────────────────────────────────────── */
 .auth-bg { flex:1; background:var(--bg-mid); display:flex; flex-direction:column; }
@@ -266,7 +263,7 @@ html, body { width:100%; height:100%; overflow:hidden; background:var(--bg-deep)
   overflow: visible;
 }
 
-/* Active state — default gold */
+/* Active state — uniform gold for all tabs */
 .tab.on svg,
 .tab.on i {
   color: #ffd369;
@@ -278,47 +275,6 @@ html, body { width:100%; height:100%; overflow:hidden; background:var(--bg-deep)
   color: #ffd369;
   font-weight: 700;
 }
-
-/* ── PER-TAB ACCENT COLOURS ──────────────────────────────── */
-/* Home — warm gold */
-#t-home.on .tab-ico { stroke: #ffd369; }
-#t-home.on .tab-lbl { color: #ffd369; }
-
-/* Sermons tab (now shows Media) — coral pink */
-#t-sermons .tab-ico { stroke: #f08080; }
-#t-sermons .tab-lbl { color: #f08080; }
-#t-sermons.on .tab-ico { stroke: #ff9999; }
-#t-sermons.on .tab-lbl { color: #ff9999; }
-
-/* Events — mint green */
-#t-events .tab-ico { stroke: #5ec98a; }
-#t-events .tab-lbl { color: #5ec98a; }
-#t-events.on .tab-ico { stroke: #7ee8a2; }
-#t-events.on .tab-lbl { color: #7ee8a2; }
-
-/* Prayer-wall tab (now shows Give) — bright green */
-#t-prayer-wall .tab-ico { stroke: #4cde80; }
-#t-prayer-wall .tab-lbl { color: #4cde80; }
-#t-prayer-wall.on .tab-ico { stroke: #6effa0; }
-#t-prayer-wall.on .tab-lbl { color: #6effa0; }
-
-/* Serve / Volunteer — warm orange */
-#t-volunteer .tab-ico { stroke: #f5a623; }
-#t-volunteer .tab-lbl { color: #f5a623; }
-#t-volunteer.on .tab-ico { stroke: #ffbf47; }
-#t-volunteer.on .tab-lbl { color: #ffbf47; }
-
-/* Give tab (now shows Prayer Wall) — rose gold */
-#t-give .tab-ico { stroke: #f4a7b9; }
-#t-give .tab-lbl { color: #f4a7b9; }
-#t-give.on .tab-ico { stroke: #ffc4d0; }
-#t-give.on .tab-lbl { color: #ffc4d0; }
-
-/* More / Connect — steel blue */
-#t-connect .tab-ico { stroke: #7aaccc; }
-#t-connect .tab-lbl { color: #7aaccc; }
-#t-connect.on .tab-ico { stroke: #9ac8e8; }
-#t-connect.on .tab-lbl { color: #9ac8e8; }
 
 /* ── STICKY BOTTOM BARS ──────────────────────────────────── */
 .screen-bottom { padding:8px 12px 10px; background:var(--bg-deep); border-top:0.5px solid rgba(255,255,255,0.18); flex-shrink:0; }
