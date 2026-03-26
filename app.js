@@ -14,7 +14,7 @@ function applyTheme(mode) {
   const meta = document.getElementById("theme-meta");
   if (btn)  btn.classList.toggle("light", isLight);
   if (lbl)  lbl.textContent = isLight ? "☀️" : "🌙";
-  if (meta) meta.content    = isLight ? "#ffffff" : "#0d1b2a";
+  if (meta) meta.content    = isLight ? "#ffffff" : "#800000";
   localStorage.setItem("gm-theme", mode);
 }
 

@@ -4,13 +4,13 @@
 
 /* ── THEME VARIABLES ─────────────────────────────────────── */
 :root {
-  --bg-deep: #0a0a0f; --bg-mid: #0d1b2a; --bg-card: #16213e;
+  --bg-deep: #4d0000; --bg-mid: #800000; --bg-card: #3d0000;
   --border: #2a3a50; --border-gold: #c9b97a44;
   --text-primary: #dde8f0; --text-secondary: #8899aa;
   --text-muted: #667788; --text-dim: #445566;
   --gold: #c9b97a; --gold-text: #e8d48b;
   --gold-dim: #c9b97a22; --gold-border: #c9b97a33;
-  --stroke: #334455; --tab-on: #c9b97a; --auth-form: #0a0a0f;
+  --stroke: #334455; --tab-on: #c9b97a; --auth-form: #4d0000;
   --trans: background 0.25s ease, color 0.2s ease, border-color 0.2s ease;
 }
 
@@ -65,7 +65,7 @@ html, body { width:100%; height:100%; overflow:hidden; background:var(--bg-deep)
 .phone-field { flex:1; background:var(--bg-card); border:0.5px solid var(--border); border-radius:12px; padding:13px 16px; font-size:14px; color:var(--text-primary); font-family:-apple-system,sans-serif; }
 .phone-field::placeholder { color:var(--text-dim); }
 
-.btn-gold { width:100%; padding:15px; background:var(--gold); border:none; border-radius:14px; font-size:15px; font-weight:600; color:#0d1b2a; cursor:pointer; margin-bottom:14px; font-family:-apple-system,sans-serif; }
+.btn-gold { width:100%; padding:15px; background:var(--gold); border:none; border-radius:14px; font-size:15px; font-weight:600; color:#800000; cursor:pointer; margin-bottom:14px; font-family:-apple-system,sans-serif; }
 .btn-gold:active { opacity:0.85; transform:scale(0.99); }
 .btn-outline { width:100%; padding:14px; background:transparent; border:0.5px solid var(--border); border-radius:14px; font-size:14px; color:var(--text-secondary); cursor:pointer; margin-bottom:10px; display:flex; align-items:center; justify-content:center; gap:8px; font-family:-apple-system,sans-serif; }
 
@@ -79,7 +79,7 @@ html, body { width:100%; height:100%; overflow:hidden; background:var(--bg-deep)
 
 .tab-row { display:flex; background:var(--bg-card); border-radius:12px; padding:4px; margin-bottom:20px; gap:4px; }
 .tab-opt { flex:1; padding:10px; text-align:center; border-radius:10px; cursor:pointer; font-size:13px; color:var(--text-muted); border:none; background:transparent; font-family:-apple-system,sans-serif; }
-.tab-opt.on { background:var(--gold); color:#0d1b2a; font-weight:600; }
+.tab-opt.on { background:var(--gold); color:#800000; font-weight:600; }
 
 .otp-boxes { display:flex; gap:10px; justify-content:center; margin:20px 0; }
 .otp-box { width:50px; height:56px; background:var(--bg-card); border:0.5px solid var(--border); border-radius:12px; font-size:20px; font-weight:600; color:var(--gold-text); text-align:center; font-family:-apple-system,sans-serif; }
@@ -108,7 +108,7 @@ html, body { width:100%; height:100%; overflow:hidden; background:var(--bg-deep)
 
 /* ── LIVE SERVICE CARD ───────────────────────────────────── */
 .live-card { border-radius:16px; padding:14px 16px; margin:0 16px 14px; border:0.5px solid var(--border); background:var(--bg-card); display:flex; align-items:center; gap:14px; text-decoration:none; cursor:pointer; }
-.live-card.live-active { border-color:#ff333388; background:linear-gradient(135deg,#1a0a0a,#16213e); }
+.live-card.live-active { border-color:#ff333388; background:linear-gradient(135deg,#1a0a0a,#3d0000); }
 .live-pulse { width:10px; height:10px; border-radius:50%; background:#ff3333; box-shadow:0 0 0 0 #ff333366; animation:pulse 1.5s infinite; flex-shrink:0; }
 .live-pulse.offline { background:var(--text-muted); animation:none; box-shadow:none; }
 @keyframes pulse { 0%{box-shadow:0 0 0 0 #ff333366} 70%{box-shadow:0 0 0 8px transparent} 100%{box-shadow:0 0 0 0 transparent} }
@@ -117,7 +117,7 @@ html, body { width:100%; height:100%; overflow:hidden; background:var(--bg-deep)
 .live-sub { font-size:11px; color:var(--text-muted); margin-top:2px; }
 
 /* ── DEVOTIONAL PREVIEW ON HOME ──────────────────────────── */
-.devot-preview { background:linear-gradient(135deg,var(--bg-card),#1a2a3e); border-radius:16px; padding:16px; margin:0 16px 14px; border:0.5px solid var(--gold-border); cursor:pointer; position:relative; overflow:hidden; }
+.devot-preview { background:linear-gradient(135deg,var(--bg-card),#4a0a0a); border-radius:16px; padding:16px; margin:0 16px 14px; border:0.5px solid var(--gold-border); cursor:pointer; position:relative; overflow:hidden; }
 .devot-preview::before { content:""; position:absolute; top:0; left:0; width:3px; height:100%; background:var(--gold); border-radius:0 0 0 0; }
 .devot-preview-tag { font-size:10px; color:var(--gold); letter-spacing:1px; text-transform:uppercase; font-weight:500; margin-bottom:6px; padding-left:10px; }
 .devot-preview-title { font-size:15px; font-weight:600; color:var(--text-primary); padding-left:10px; margin-bottom:4px; }
@@ -188,7 +188,7 @@ html, body { width:100%; height:100%; overflow:hidden; background:var(--bg-deep)
 .ai-ava { width:26px; height:26px; border-radius:50%; background:var(--bg-card); border:1px solid var(--gold); display:flex; align-items:center; justify-content:center; flex-shrink:0; font-size:10px; font-weight:700; color:var(--gold); }
 .ai-bub { background:var(--bg-card); border:0.5px solid var(--border); border-radius:16px 16px 16px 4px; padding:11px 13px; font-size:13px; color:var(--text-secondary); line-height:1.6; max-width:82%; white-space:pre-wrap; word-break:break-word; }
 .usr-row { flex-direction:row-reverse; }
-.usr-bub { background:var(--gold); border-radius:16px 16px 4px 16px; padding:11px 13px; font-size:13px; color:#0d1b2a; font-weight:500; line-height:1.6; max-width:82%; }
+.usr-bub { background:var(--gold); border-radius:16px 16px 4px 16px; padding:11px 13px; font-size:13px; color:#800000; font-weight:500; line-height:1.6; max-width:82%; }
 .ai-bar { display:flex; gap:8px; padding:10px 14px 14px; border-top:0.5px solid var(--bg-card); background:var(--bg-deep); }
 .ai-inp { flex:1; background:var(--bg-card); border:0.5px solid var(--border); border-radius:22px; padding:10px 16px; font-size:13px; color:var(--text-primary); font-family:-apple-system,sans-serif; }
 .ai-inp:focus { outline:none; }
@@ -208,9 +208,9 @@ html, body { width:100%; height:100%; overflow:hidden; background:var(--bg-deep)
   display: flex;
   background: #0f1b2d;
   border-top: 2px solid #c9b97a;
-  height: 72px;
-  min-height: 72px;
-  padding: 6px 0 10px;
+  height: 56px;
+  min-height: 56px;
+  padding: 4px 0 4px;
   align-items: center;
   justify-content: space-around;
   overflow-x: auto;
@@ -279,7 +279,7 @@ html, body { width:100%; height:100%; overflow:hidden; background:var(--bg-deep)
 /* ── STICKY BOTTOM BARS ──────────────────────────────────── */
 .screen-bottom { padding:8px 12px 10px; background:var(--bg-deep); border-top:0.5px solid var(--bg-card); flex-shrink:0; }
 .bottom-btn { width:100%; padding:11px 8px; border:none; border-radius:12px; font-size:13px; font-weight:600; cursor:pointer; display:flex; align-items:center; justify-content:center; gap:6px; text-decoration:none; font-family:-apple-system,sans-serif; }
-.bottom-btn-gold { background:var(--gold); color:#0d1b2a; }
+.bottom-btn-gold { background:var(--gold); color:#800000; }
 .bottom-btn-gold:active { opacity:0.88; }
 .bottom-btn-red { background:#ff0000; color:#fff; }
 .bottom-btn-red:active { opacity:0.88; }
@@ -290,7 +290,7 @@ html, body { width:100%; height:100%; overflow:hidden; background:var(--bg-deep)
 .bottom-btn-row .bottom-btn { flex:1; }
 
 /* ── FLOATING BUTTONS ────────────────────────────────────── */
-.fab-wrap { position:fixed; bottom:80px; right:16px; display:none; flex-direction:column; gap:10px; z-index:90; align-items:flex-end; }
+.fab-wrap { position:fixed; bottom:64px; right:16px; display:none; flex-direction:column; gap:10px; z-index:90; align-items:flex-end; }
 .fab-wrap.on { display:flex; }
 .fab { width:52px; height:52px; border-radius:50%; display:flex; align-items:center; justify-content:center; cursor:pointer; text-decoration:none; box-shadow:0 4px 16px #00000066; border:none; flex-shrink:0; transition:transform 0.15s; }
 .fab:active { transform:scale(0.93); }
@@ -330,7 +330,7 @@ html, body { width:100%; height:100%; overflow:hidden; background:var(--bg-deep)
 .admin-card-title { font-size:13px; font-weight:600; color:var(--gold-text); margin-bottom:12px; }
 .admin-input { width:100%; background:var(--bg-mid); border:0.5px solid var(--border); border-radius:10px; padding:11px 14px; font-size:13px; color:var(--text-primary); margin-bottom:10px; font-family:-apple-system,sans-serif; }
 .admin-input:focus { outline:none; border-color:var(--gold); }
-.admin-btn { width:100%; padding:12px; background:var(--gold); border:none; border-radius:10px; font-size:14px; font-weight:600; color:#0d1b2a; cursor:pointer; }
+.admin-btn { width:100%; padding:12px; background:var(--gold); border:none; border-radius:10px; font-size:14px; font-weight:600; color:#800000; cursor:pointer; }
 .admin-btn-danger { background:#ff4444; color:#fff; }
 .admin-btn-secondary { background:var(--bg-mid); border:0.5px solid var(--border); color:var(--text-secondary); }
 .prayer-req-item { background:var(--bg-mid); border-radius:10px; padding:12px; margin-bottom:8px; border-left:2px solid var(--gold); }
@@ -374,13 +374,13 @@ body.light .splash-img { box-shadow:0 8px 32px #00000022; }
 .media-filter { display:flex; gap:8px; padding:14px 16px 6px; overflow-x:auto; scrollbar-width:none; }
 .media-filter::-webkit-scrollbar { display:none; }
 .media-pill { padding:7px 16px; border-radius:20px; font-size:12px; font-weight:500; cursor:pointer; white-space:nowrap; border:0.5px solid var(--border); background:var(--bg-card); color:var(--text-muted); transition:all 0.2s; }
-.media-pill.on { background:var(--gold); color:#0d1b2a; font-weight:700; border-color:var(--gold); }
+.media-pill.on { background:var(--gold); color:#800000; font-weight:700; border-color:var(--gold); }
 .media-grid { padding:12px 16px 20px; display:grid; grid-template-columns:1fr 1fr; gap:12px; }
 
 /* New media card */
 .media-card-new { background:var(--bg-card); border-radius:14px; border:0.5px solid var(--border); overflow:hidden; cursor:pointer; transition:border-color 0.2s,transform 0.15s; }
 .media-card-new:active { border-color:var(--gold); transform:scale(0.97); }
-.media-card-thumb { height:100px; background:linear-gradient(135deg,#0d1b2a,#16213e); display:flex; align-items:center; justify-content:center; position:relative; }
+.media-card-thumb { height:100px; background:linear-gradient(135deg,#800000,#3d0000); display:flex; align-items:center; justify-content:center; position:relative; }
 .media-card-icon { opacity:0.35; }
 .media-card-play { position:absolute; width:38px; height:38px; border-radius:50%; background:var(--gold); display:flex; align-items:center; justify-content:center; box-shadow:0 4px 14px #00000066; }
 .media-card-badge { position:absolute; top:8px; right:8px; font-size:9px; font-weight:800; letter-spacing:0.8px; padding:3px 7px; border-radius:6px; border:0.5px solid; }
@@ -416,8 +416,8 @@ body.light .splash-img { box-shadow:0 8px 32px #00000022; }
 .prayer-wall-footer { display:flex; justify-content:space-between; align-items:center; }
 .prayer-wall-time { font-size:11px; color:var(--text-muted); }
 .pray-btn { display:flex; align-items:center; gap:5px; background:var(--gold-dim); border:0.5px solid var(--gold-border); border-radius:20px; padding:6px 12px; cursor:pointer; font-size:12px; color:var(--gold); font-weight:500; font-family:-apple-system,sans-serif; transition:background 0.2s; }
-.pray-btn:active { background:var(--gold); color:#0d1b2a; }
-.pray-btn.prayed { background:var(--gold); color:#0d1b2a; }
+.pray-btn:active { background:var(--gold); color:#800000; }
+.pray-btn.prayed { background:var(--gold); color:#800000; }
 .prayer-wall-submit { background:var(--bg-card); border-radius:14px; margin:0 16px 14px; padding:14px; border:0.5px solid var(--border); }
 .prayer-wall-submit textarea { width:100%; background:var(--bg-mid); border:0.5px solid var(--border); border-radius:10px; padding:12px 14px; font-size:14px; color:var(--text-primary); font-family:-apple-system,sans-serif; resize:none; height:80px; margin-bottom:10px; }
 .prayer-wall-submit textarea:focus { outline:none; border-color:var(--gold); }
@@ -430,7 +430,7 @@ body.light .splash-img { box-shadow:0 8px 32px #00000022; }
 .volunteer-desc { font-size:12px; color:var(--text-muted); margin-top:2px; }
 .volunteer-count { font-size:11px; color:var(--gold); margin-top:4px; }
 .join-btn { padding:8px 16px; border-radius:10px; border:0.5px solid var(--gold); background:transparent; color:var(--gold); font-size:12px; font-weight:600; cursor:pointer; font-family:-apple-system,sans-serif; white-space:nowrap; }
-.join-btn.joined { background:var(--gold); color:#0d1b2a; border-color:var(--gold); }
+.join-btn.joined { background:var(--gold); color:#800000; border-color:var(--gold); }
 
 /* ── ABOUT LOC CARD ──────────────────────────────────────── */
 .about-loc-card { display:flex; align-items:center; gap:12px; background:var(--bg-card); border-radius:12px; padding:14px; margin-bottom:10px; border:0.5px solid var(--border); }

@@ -4,8 +4,8 @@
   "description": "Grace Ministry India — Heal · Help · Serve. Serving Mangalore and Bangalore.",
   "start_url": "/",
   "display": "standalone",
-  "background_color": "#0d1b2a",
-  "theme_color": "#0d1b2a",
+  "background_color": "#800000",
+  "theme_color": "#800000",
   "orientation": "portrait-primary",
   "lang": "en-IN",
   "icons": [
